@@ -3,101 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>Venym Labs — Investor Deck 2026</title>
+<title>Venym Labs — Investor Deck 2026 v4</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',sans-serif;color:#fff;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;cursor:none}
+html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',sans-serif;color:#fff;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 ::selection{background:#fff;color:#000}
 ::-webkit-scrollbar{width:0;display:none}
-#loader{position:fixed;inset:0;z-index:10000;background:#050505;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s ease}
-#loader.done{opacity:0;pointer-events:none}
-#loader-letters{display:flex;gap:4px;margin-bottom:24px}
-#loader-letters span{opacity:0;font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(18px,3vw,28px);letter-spacing:.15em;color:#fff;animation:letterIn .3s ease forwards}
-@keyframes letterIn{to{opacity:1}}
-#loader-line{width:0;height:1px;background:#fff;animation:lineDraw 1.5s .8s ease forwards}
-@keyframes lineDraw{to{width:120px}}
-#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
-#cursor-dot{position:fixed;width:6px;height:6px;background:#fff;border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
-#cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(255,255,255,.3);border-radius:50%;pointer-events:none;z-index:99997;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s,opacity .3s;opacity:0}
-#cursor-ring.hover{width:40px;height:40px;border-color:rgba(255,255,255,.5)}
-.touch-device #cursor-dot,.touch-device #cursor-ring{display:none!important}
-.touch-device,body.touch-device{cursor:auto!important}
+
+/* NOISE */
 .noise{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.viewport{width:100%;height:100vh;overflow:hidden;position:relative;z-index:1}
-.slider{display:flex;height:100%;will-change:transform}
-.slide{flex:0 0 auto;height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;opacity:.4;transform:scale(.97);transition:opacity .5s ease,transform .5s ease}
-.slide.active{opacity:1;transform:scale(1)}
+
+/* VIEWPORT + SLIDER */
+.viewport{width:100%;height:100vh;overflow:hidden;position:relative}
+.slider{display:flex;height:100%;transition:transform .6s cubic-bezier(.77,0,.175,1);will-change:transform}
+.slide{flex:0 0 auto;height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+
+/* PROGRESS BAR */
 .progress{position:fixed;top:0;left:0;height:2px;background:#fff;z-index:100;transition:width .6s cubic-bezier(.77,0,.175,1)}
+
+/* NAV DOTS */
 .dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100}
-.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08);cursor:none;transition:all .3s}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08);cursor:pointer;transition:all .3s}
 .dot.active{background:rgba(255,255,255,.4);transform:scale(1.3)}
+
+/* SLIDE COUNTER */
 .counter{position:fixed;bottom:24px;left:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;color:#27272a;z-index:100}
-#sound-btn{position:fixed;bottom:24px;right:24px;z-index:100;background:none;border:1px solid rgba(255,255,255,.08);padding:6px 8px;cursor:none;opacity:.2;transition:opacity .3s}
-#sound-btn:hover{opacity:.5}
-#sound-btn svg{display:block;width:16px;height:16px}
+
+/* BLOBS */
 @keyframes blobFloat{0%,100%{transform:scale(1);opacity:.03}50%{transform:scale(1.1);opacity:.06}}
 .blob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(100px)}
 .b1{top:-15%;left:-10%;width:50%;height:50%;background:rgba(255,255,255,.03);animation:blobFloat 15s ease-in-out infinite}
 .b2{bottom:-20%;right:-10%;width:60%;height:60%;background:rgba(255,255,255,.02);animation:blobFloat 18s ease-in-out infinite 3s}
+
+/* TYPE */
 .mono{font-family:'JetBrains Mono',monospace}
 .lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#27272a}
+.lbl2{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:#52525b}
 .hd{font-family:'Inter',sans-serif;font-weight:500;letter-spacing:-.04em;line-height:.88}
 .hd2{font-family:'Inter',sans-serif;font-weight:500;letter-spacing:-.02em;line-height:.92}
 .bd{font-family:'Inter',sans-serif;font-weight:300;color:#a1a1aa;line-height:1.7}
 .mu{color:#52525b}
 .dm{color:#27272a}
+
+/* INNER CONTAINER */
 .w{position:relative;z-index:10;width:100%;max-width:900px;padding:80px 48px}
-.slide .w>*{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
-.slide.active .w>*{opacity:1;transform:translateY(0)}
-.slide.active .w>*:nth-child(1){transition-delay:.05s}
-.slide.active .w>*:nth-child(2){transition-delay:.1s}
-.slide.active .w>*:nth-child(3){transition-delay:.15s}
-.slide.active .w>*:nth-child(4){transition-delay:.2s}
-.slide.active .w>*:nth-child(5){transition-delay:.25s}
-.slide.active .w>*:nth-child(6){transition-delay:.3s}
-.slide.active .w>*:nth-child(7){transition-delay:.35s}
-.slide.active .w>*:nth-child(8){transition-delay:.4s}
-.slide.active .w>*:nth-child(9){transition-delay:.45s}
-.slide.active .w>*:nth-child(10){transition-delay:.5s}
-.kt-word{display:inline-block;opacity:0;transform:translateY(15px);transition:opacity .5s ease,transform .5s ease}
-.slide.active .kt-word{opacity:1;transform:translateY(0)}
-.slide.active .kt-word:nth-child(1){transition-delay:.1s}
-.slide.active .kt-word:nth-child(2){transition-delay:.2s}
-.slide.active .kt-word:nth-child(3){transition-delay:.3s}
-.slide.active .kt-word:nth-child(4){transition-delay:.4s}
-.slide.active .kt-word:nth-child(5){transition-delay:.5s}
-.slide.active .kt-word:nth-child(6){transition-delay:.6s}
-.slide.active .kt-word:nth-child(7){transition-delay:.7s}
-.slide.active .kt-word:nth-child(8){transition-delay:.8s}
-.slide.active .kt-word:nth-child(9){transition-delay:.9s}
+
+/* BADGES */
 .tg{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;padding:3px 8px;border:1px solid;display:inline-block}
 .tg-g{border-color:rgba(34,197,94,.2);color:rgba(34,197,94,.6);background:rgba(34,197,94,.05)}
 .tg-y{border-color:rgba(234,179,8,.2);color:rgba(234,179,8,.6);background:rgba(234,179,8,.05)}
 .tg-b{border-color:rgba(59,130,246,.2);color:rgba(59,130,246,.6);background:rgba(59,130,246,.05)}
 .tg-w{border-color:rgba(255,255,255,.08);color:#a1a1aa;background:rgba(255,255,255,.03)}
+.tg-p{border-color:rgba(168,85,247,.2);color:rgba(168,85,247,.6);background:rgba(168,85,247,.05)}
+
+/* CARDS */
 .crd{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);transition:border-color .5s;overflow:hidden}
 .crd:hover{border-color:rgba(255,255,255,.1)}
+
+/* METRIC STRIP */
 .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .metric-box{border:1px solid rgba(255,255,255,.05);padding:20px;text-align:center;background:rgba(255,255,255,.03)}
 .metric-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#27272a;margin-bottom:8px}
 .metric-value{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(18px,2.5vw,28px);color:#e4e4e7;letter-spacing:-.02em}
+
+/* PIPELINE */
 .pipe{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);padding:16px 20px}
 .pipe-track{display:flex;align-items:center;gap:6px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
 .pipe-n{font-family:'JetBrains Mono',monospace;font-size:10px;white-space:nowrap;padding:5px 12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:#a1a1aa}
 .pipe-a{font-family:'JetBrains Mono',monospace;font-size:9px;color:#27272a;white-space:nowrap}
+
+/* PILLS */
 .pill{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);padding:6px 14px;display:inline-flex;align-items:center;gap:8px}
 .pill-d{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.08)}
+
+/* BUTTONS */
 .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn-p{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;background:#fff;color:#000;padding:14px 32px;font-weight:700;text-decoration:none;display:inline-block;border:none;cursor:none;transition:opacity .3s,transform .3s}
-.btn-p:hover{opacity:.85;transform:scale(1.02)}
-.btn-s{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;border:1px solid rgba(255,255,255,.08);color:#a1a1aa;padding:14px 32px;cursor:none;display:inline-block;text-decoration:none;background:transparent;transition:border-color .3s}
+.btn-p{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;background:#fff;color:#000;padding:14px 32px;font-weight:700;text-decoration:none;display:inline-block;border:none;cursor:pointer;transition:opacity .3s}
+.btn-p:hover{opacity:.85}
+.btn-s{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;border:1px solid rgba(255,255,255,.08);color:#a1a1aa;padding:14px 32px;cursor:pointer;display:inline-block;text-decoration:none;background:transparent;transition:border-color .3s}
 .btn-s:hover{border-color:rgba(255,255,255,.2)}
-@keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.15)}50%{box-shadow:0 0 20px 4px rgba(255,255,255,.08)}}
-.btn-cta{animation:ctaPulse 2.5s infinite}
-.btn-cta:hover{animation:ctaPulse 1.5s infinite;transform:scale(1.02)}
+
+/* COMPARISON COLS */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .compare-col{border:1px solid rgba(255,255,255,.05);padding:24px;background:rgba(255,255,255,.03)}
 .compare-col.dim{opacity:.5}
@@ -105,81 +94,75 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .compare-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .compare-col li{font-family:'Inter',sans-serif;font-size:13px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:16px;position:relative}
 .compare-col li::before{content:'—';position:absolute;left:0;color:#27272a}
+
+/* PRODUCT GRID */
 .prod-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-.prod-grid .prod-item{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);padding:20px;transition:border-color .5s,transform .15s ease;will-change:transform;transform-style:preserve-3d}
+.prod-grid .prod-item{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);padding:20px;transition:border-color .5s}
 .prod-grid .prod-item:hover{border-color:rgba(255,255,255,.1)}
+
+/* AGENT CARDS */
 .agent-cards{display:flex;flex-direction:column;gap:8px}
 .agent-card{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);display:grid;grid-template-columns:140px 1fr 160px;gap:1px}
 .agent-card>div{padding:16px 20px}
 .agent-card>div:not(:last-child){border-right:1px solid rgba(255,255,255,.05)}
 .agent-hdr{font-family:'JetBrains Mono',monospace;font-size:8px;color:#27272a;margin-bottom:6px}
 .agent-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;color:#e4e4e7}
+
+/* FRAME LINES + CORNERS */
 .frame{position:absolute;inset:40px;border:1px solid rgba(255,255,255,.04);pointer-events:none;z-index:1}
 .corners{position:absolute;inset:24px;pointer-events:none;z-index:2}
 .corner{position:absolute;width:20px;height:20px}
 .corner::before,.corner::after{content:'';position:absolute;background:rgba(255,255,255,.15)}
-.corner-tl{top:0;left:0}.corner-tl::before{top:0;left:0;width:20px;height:1px}.corner-tl::after{top:0;left:0;width:1px;height:20px}
-.corner-tr{top:0;right:0}.corner-tr::before{top:0;right:0;width:20px;height:1px}.corner-tr::after{top:0;right:0;width:1px;height:20px}
-.corner-bl{bottom:0;left:0}.corner-bl::before{bottom:0;left:0;width:20px;height:1px}.corner-bl::after{bottom:0;left:0;width:1px;height:20px}
-.corner-br{bottom:0;right:0}.corner-br::before{bottom:0;right:0;width:20px;height:1px}.corner-br::after{bottom:0;right:0;width:1px;height:20px}
+.corner-tl{top:0;left:0}
+.corner-tl::before{top:0;left:0;width:20px;height:1px}
+.corner-tl::after{top:0;left:0;width:1px;height:20px}
+.corner-tr{top:0;right:0}
+.corner-tr::before{top:0;right:0;width:20px;height:1px}
+.corner-tr::after{top:0;right:0;width:1px;height:20px}
+.corner-bl{bottom:0;left:0}
+.corner-bl::before{bottom:0;left:0;width:20px;height:1px}
+.corner-bl::after{bottom:0;left:0;width:1px;height:20px}
+.corner-br{bottom:0;right:0}
+.corner-br::before{bottom:0;right:0;width:20px;height:1px}
+.corner-br::after{bottom:0;right:0;width:1px;height:20px}
+
+/* DASH LIST */
 .dash-list{display:flex;flex-direction:column;gap:16px}
 .dash-item{display:flex;gap:16px;align-items:flex-start}
 .dash-item span:first-child{font-family:'JetBrains Mono',monospace;font-size:14px;color:#27272a;line-height:1.6;flex-shrink:0}
 .dash-item span:last-child{font-family:'Inter',sans-serif;font-weight:300;color:#a1a1aa;line-height:1.7}
-.mkt-bar{margin-top:12px;height:2px;background:rgba(255,255,255,.05);overflow:hidden;border-radius:1px}
-.mkt-fill{height:100%;width:0%;transition:width 1.5s cubic-bezier(.16,1,.3,1)}
-.agent-node rect{transition:stroke .3s,fill .3s}
-.agent-node:hover rect{stroke:rgba(255,255,255,.3);fill:rgba(255,255,255,.06)}
-.agent-node text{transition:fill .3s}
-.agent-node:hover text{fill:#fff}
-#sh-query{cursor:none}#sh-query::placeholder{color:#27272a}
-.search-chips{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
-.search-chip{font-family:'JetBrains Mono',monospace;font-size:9px;color:#52525b;padding:3px 8px;border:1px solid rgba(255,255,255,.05);cursor:none;transition:border-color .2s,color .2s}
-.search-chip:hover{border-color:rgba(255,255,255,.15);color:#a1a1aa}
+
+/* RESPONSIVE */
 @media(max-width:768px){
-  .w{padding:48px 20px}.slide{align-items:flex-start}
+  .w{padding:48px 20px}
+  .slide{align-items:flex-start}
   .metric-grid{grid-template-columns:1fr}
-  .compare{grid-template-columns:1fr}.compare-col.dim{opacity:.7}
+  .compare{grid-template-columns:1fr}
+  .compare-col.dim{opacity:.7}
   .prod-grid{grid-template-columns:1fr}
-  .agent-card{grid-template-columns:1fr}.agent-card>div:not(:last-child){border-right:none;border-bottom:1px solid rgba(255,255,255,.05)}
+  .agent-card{grid-template-columns:1fr}
+  .agent-card>div:not(:last-child){border-right:none;border-bottom:1px solid rgba(255,255,255,.05)}
   .btn-row{flex-direction:column;align-items:stretch}
   .btn-row .btn-p,.btn-row .btn-s{padding:14px 20px;text-align:center;letter-spacing:.15em;width:100%;display:block}
-  .dots{right:12px;gap:6px}.dot{width:5px;height:5px}
-  .frame{inset:20px}.corners{inset:12px}.corner{width:14px;height:14px}
-  body{cursor:auto!important}#cursor-dot,#cursor-ring,#sound-btn{display:none!important}
+  .dots{right:12px;gap:6px}
+  .dot{width:5px;height:5px}
+  .frame{inset:20px}
+  .corners{inset:12px}
+  .corner{width:14px;height:14px}
 }
-@media(max-width:480px){.w{padding:40px 16px}.lbl{font-size:8px;letter-spacing:.3em}.tg{font-size:7px;padding:2px 6px}}
+@media(max-width:480px){
+  .w{padding:40px 16px}
+  .lbl{font-size:8px;letter-spacing:.3em}
+  .tg{font-size:7px;padding:2px 6px}
+}
 @media(prefers-reduced-motion:reduce){
-  .slide{transition:opacity .2s ease!important;transform:none!important}
-  .slide .w>*{transition:opacity .2s ease!important;transform:none!important}
+  .slider{transition:transform .2s ease}
   *{animation-duration:.01ms!important;transition-duration:.2s!important}
-  .noise{display:none}#particles{display:none}
+  .noise{display:none}
 }
 </style>
 </head>
 <body>
-
-<!-- LOADING SCREEN -->
-<div id="loader">
-  <div id="loader-letters"></div>
-  <div id="loader-line"></div>
-</div>
-
-<!-- PARTICLE CANVAS -->
-<canvas id="particles"></canvas>
-
-<!-- CUSTOM CURSOR -->
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
-
-<!-- SOUND TOGGLE -->
-<button id="sound-btn" title="Toggle sounds">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-    <path id="sound-wave" d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="none"/>
-    <path id="sound-wave2" d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="none"/>
-  </svg>
-</button>
 
 <div class="noise"></div>
 <div class="progress" id="progress"></div>
@@ -189,13 +172,11 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="viewport" id="viewport">
 <div class="slider" id="slider">
 
-<!-- SLIDE 01: THE HOOK -->
+<!-- ═══ SLIDE 01: THE HOOK ═══ -->
 <div class="slide" data-idx="0">
   <div class="w" style="text-align:center;max-width:800px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%">
     <h1 class="hd" style="font-size:clamp(28px,5vw,56px);margin-bottom:32px">
-      <span class="kt-word">The</span> <span class="kt-word">best</span> <span class="kt-word">AI</span><br>
-      <span class="kt-word">doesn't</span> <span class="kt-word">come</span> <span class="kt-word">from</span><br>
-      <span class="kt-word mu">the</span> <span class="kt-word mu">biggest</span> <span class="kt-word mu">companies.</span>
+      The best AI<br>doesn't come from<br><span class="mu">the biggest companies.</span>
     </h1>
     <div style="width:48px;height:1px;background:rgba(255,255,255,.08);margin-bottom:24px"></div>
     <div class="mono" style="font-size:10px;color:#52525b;line-height:1.7">
@@ -205,7 +186,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
   </div>
 </div>
 
-<!-- SLIDE 02: THE PROBLEM -->
+<!-- ═══ SLIDE 02: THE PROBLEM ═══ -->
 <div class="slide" data-idx="1">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -229,7 +210,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
   </div>
 </div>
 
-<!-- SLIDE 03: WHAT WE BUILD -->
+<!-- ═══ SLIDE 03: WHAT WE BUILD ═══ -->
 <div class="slide" data-idx="2">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -244,7 +225,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
       Not a roadmap. A product line. Every vertical ships real revenue.
     </p>
     <div class="prod-grid" style="margin-bottom:24px">
-      <div class="prod-item" onmousemove="tiltCard(event,this)" onmouseleave="resetCard(this)">
+      <div class="prod-item">
         <div class="agent-hdr" style="margin-bottom:8px">SEARCH API</div>
         <div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#e4e4e7;margin-bottom:12px;letter-spacing:.04em">SearchHive</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
@@ -254,7 +235,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
           <li style="font-family:Inter,sans-serif;font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span><span class="tg tg-g">LIVE · REVENUE</span></li>
         </ul>
       </div>
-      <div class="prod-item" onmousemove="tiltCard(event,this)" onmouseleave="resetCard(this)">
+      <div class="prod-item">
         <div class="agent-hdr" style="margin-bottom:8px">DEX PROTOCOL</div>
         <div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#e4e4e7;margin-bottom:12px;letter-spacing:.04em">Hyperswap</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
@@ -264,7 +245,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
           <li style="font-family:Inter,sans-serif;font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span><span class="tg tg-g">LIVE · REVENUE</span></li>
         </ul>
       </div>
-      <div class="prod-item" onmousemove="tiltCard(event,this)" onmouseleave="resetCard(this)">
+      <div class="prod-item">
         <div class="agent-hdr" style="margin-bottom:8px">PERP EXECUTION</div>
         <div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#e4e4e7;margin-bottom:12px;letter-spacing:.04em">TIDE Protocol</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
@@ -280,25 +261,11 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
       <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#a1a1aa;white-space:nowrap">WORKFLOW AUTOMATION — LIVE</span></div>
       <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#a1a1aa;white-space:nowrap">PRIVATE EDGE — SHIPPED</span></div>
     </div>
-    <!-- LIVE SEARCH DEMO -->
-    <div style="border:1px solid rgba(255,255,255,.05);background:rgba(0,0,0,.4);padding:16px;font-family:'JetBrains Mono',monospace">
-      <div style="font-size:9px;color:#27272a;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px">LIVE API DEMO — SEARCHHIVE</div>
-      <div style="display:flex;gap:8px">
-        <input id="sh-query" type="text" placeholder="Try a search..." style="flex:1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:8px 12px;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;outline:none" onkeydown="if(event.key==='Enter')doSearchHive()">
-        <button onclick="doSearchHive()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:8px 16px;color:#a1a1aa;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;cursor:none;text-transform:uppercase">SEARCH</button>
-      </div>
-      <div class="search-chips">
-        <span class="search-chip" onclick="document.getElementById('sh-query').value='Bitcoin price';doSearchHive()">Bitcoin price</span>
-        <span class="search-chip" onclick="document.getElementById('sh-query').value='AI news today';doSearchHive()">AI news today</span>
-        <span class="search-chip" onclick="document.getElementById('sh-query').value='Solana ecosystem';doSearchHive()">Solana ecosystem</span>
-      </div>
-      <div id="sh-output" style="margin-top:12px;min-height:24px;font-size:11px;color:rgba(34,197,94,.6);line-height:1.6;white-space:pre-wrap;overflow-y:auto;max-height:120px"></div>
-    </div>
-    <div class="mono" style="font-size:10px;color:#52525b;font-style:italic;margin-top:16px">"Every product listed is deployed and generating revenue. Not a prototype. Not a waitlist."</div>
+    <div class="mono" style="font-size:10px;color:#52525b;font-style:italic">"Every product listed is deployed and generating revenue. Not a prototype. Not a waitlist."</div>
   </div>
 </div>
 
-<!-- SLIDE 04: BUSINESS MODEL -->
+<!-- ═══ SLIDE 04: BUSINESS MODEL ═══ -->
 <div class="slide" data-idx="3">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -339,7 +306,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
   </div>
 </div>
 
-<!-- SLIDE 05: TRACTION -->
+<!-- ═══ SLIDE 05: TRACTION ═══ -->
 <div class="slide" data-idx="4">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -353,19 +320,19 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
     <div class="metric-grid" style="grid-template-columns:repeat(4,1fr)">
       <div class="metric-box">
         <div class="metric-label">PRODUCTS LIVE</div>
-        <div class="metric-value" data-counter="5" data-original="5">5</div>
+        <div class="metric-value">5</div>
       </div>
       <div class="metric-box">
         <div class="metric-label">PORTFOLIO COMPANIES</div>
-        <div class="metric-value" data-counter="5" data-original="5">5</div>
+        <div class="metric-value">5</div>
       </div>
       <div class="metric-box">
         <div class="metric-label">FIRST-YEAR RUN RATE</div>
-        <div class="metric-value" data-counter="500" data-prefix="$" data-suffix="K" data-original="~$500K">~$500K</div>
+        <div class="metric-value">~$500K</div>
       </div>
       <div class="metric-box">
         <div class="metric-label">MONTH-OVER-MONTH GROWTH</div>
-        <div class="metric-value" data-counter="15" data-suffix="%+" data-original="15%+">15%+<svg width="80" height="30" viewBox="0 0 80 30" style="margin-top:8px;display:block"><path id="sparkline" d="M0,28 L12,25 L24,22 L36,18 L48,14 L60,8 L72,4 L80,1" fill="none" stroke="rgba(34,197,94,0.4)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/></svg></div>
+        <div class="metric-value">15%+</div>
       </div>
     </div>
     <div class="pipe" style="margin-top:20px">
@@ -385,7 +352,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
   </div>
 </div>
 
-<!-- SLIDE 06: THE STACK -->
+<!-- ═══ SLIDE 06: THE STACK ═══ -->
 <div class="slide" data-idx="5">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -396,22 +363,9 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
   <div class="w">
     <div class="lbl" style="margin-bottom:40px">THE ARCHITECTURE</div>
     <h2 class="hd2" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">The intelligence layer from digital to physical.</h2>
-    <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:24px;max-width:620px">
+    <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:620px">
       This isn't a chatbot with a system prompt. This is infrastructure.
     </p>
-    <svg width="100%" viewBox="0 0 700 200" style="margin-bottom:20px;display:block">
-      <line x1="175" y1="60" x2="525" y2="60" stroke="#27272a" stroke-width="1"/>
-      <line x1="175" y1="140" x2="525" y2="140" stroke="#27272a" stroke-width="1"/>
-      <line x1="175" y1="60" x2="175" y2="140" stroke="#27272a" stroke-width="1"/>
-      <line x1="525" y1="60" x2="525" y2="140" stroke="#27272a" stroke-width="1"/>
-      <circle r="2" fill="rgba(255,255,255,.15)"><animateMotion dur="6s" repeatCount="indefinite" path="M175,60 L525,60 L525,140 L175,140 L175,60"/></circle>
-      <circle r="2" fill="rgba(255,255,255,.15)"><animateMotion dur="6s" repeatCount="indefinite" path="M175,60 L525,60 L525,140 L175,140 L175,60" begin="2s"/></circle>
-      <circle r="2" fill="rgba(255,255,255,.15)"><animateMotion dur="6s" repeatCount="indefinite" path="M175,60 L525,60 L525,140 L175,140 L175,60" begin="4s"/></circle>
-      <g class="agent-node"><rect x="100" y="30" width="150" height="60" rx="4" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.1)"/><text x="175" y="55" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-size="12" font-weight="500">ANALYST</text><text x="175" y="75" text-anchor="middle" fill="#52525b" font-family="JetBrains Mono" font-size="8">AGENT 01</text></g>
-      <g class="agent-node"><rect x="450" y="30" width="150" height="60" rx="4" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.1)"/><text x="525" y="55" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-size="12" font-weight="500">EXECUTOR</text><text x="525" y="75" text-anchor="middle" fill="#52525b" font-family="JetBrains Mono" font-size="8">AGENT 02</text></g>
-      <g class="agent-node"><rect x="100" y="110" width="150" height="60" rx="4" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.1)"/><text x="175" y="135" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-size="12" font-weight="500">COMMUNICATOR</text><text x="175" y="155" text-anchor="middle" fill="#52525b" font-family="JetBrains Mono" font-size="8">AGENT 03</text></g>
-      <g class="agent-node"><rect x="450" y="110" width="150" height="60" rx="4" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.1)"/><text x="525" y="135" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-size="12" font-weight="500">COORDINATOR</text><text x="525" y="155" text-anchor="middle" fill="#52525b" font-family="JetBrains Mono" font-size="8">AGENT 04</text></g>
-    </svg>
     <div class="agent-cards">
       <div class="agent-card">
         <div><div class="agent-hdr">AGENT 01</div><div class="agent-name">ANALYST</div></div>
@@ -450,7 +404,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
   </div>
 </div>
 
-<!-- SLIDE 07: MARKET OPPORTUNITY -->
+<!-- ═══ SLIDE 07: MARKET OPPORTUNITY ═══ -->
 <div class="slide" data-idx="6">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -471,7 +425,6 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
           <span class="tg tg-b">DIGITAL AI ($1.5T by 2025)</span>
         </div>
         <p class="bd" style="font-size:13px">Worldwide AI spending forecast at $1.5 trillion in 2025, up from $987.9B in 2024 — Gartner. Enterprise demand for specialized, private AI is exploding. 30% of GenAI projects will be abandoned after proof-of-concept. Companies need providers who ship, not researchers who publish.</p>
-        <div class="mkt-bar"><div class="mkt-fill" data-target="100" style="background:rgba(59,130,246,.4)"></div></div>
       </div>
       <div class="crd" style="padding:24px;border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.03)">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
@@ -479,7 +432,6 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
           <span class="tg tg-y">AUTONOMOUS SYSTEMS ($100B+ by 2030)</span>
         </div>
         <p class="bd" style="font-size:13px">Drone market: $163B+ by 2030. Robotics market exceeding $140B. Autonomous systems across logistics, agriculture, defense, and inspection are still running on pre-AI intelligence. The upgrade cycle hasn't started.</p>
-        <div class="mkt-bar"><div class="mkt-fill" data-target="27" style="background:rgba(234,179,8,.4)"></div></div>
       </div>
       <div class="crd" style="padding:24px;border-color:rgba(255,255,255,.05);background:rgba(255,255,255,.03)">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
@@ -487,14 +439,13 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
           <span class="tg tg-w">THE INTERSECTION</span>
         </div>
         <p class="bd" style="font-size:13px">By 2027, over 50% of GenAI models will be industry-specific — up from 1% in 2023. The companies that own the intelligence layer for autonomous physical systems will own the most valuable infrastructure play of the decade.</p>
-        <div class="mkt-bar"><div class="mkt-fill" data-target="15" style="background:rgba(255,255,255,.15)"></div></div>
       </div>
     </div>
     <div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:24px">"We're positioned at the intersection of a $1.5T digital AI market and a $300B+ autonomous systems market with a unified technology stack."</div>
   </div>
 </div>
 
-<!-- SLIDE 08: THE VISION -->
+<!-- ═══ SLIDE 08: THE VISION ═══ -->
 <div class="slide" data-idx="7">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -509,6 +460,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
       The same agent architecture that automates digital workflows today controls autonomous physical systems tomorrow. We're not pivoting — we're expanding the execution surface.
     </p>
     <div style="display:flex;flex-direction:column;gap:12px">
+      <!-- PHASE 01 -->
       <div class="crd" style="padding:24px;border-color:rgba(255,255,255,.05);background:rgba(255,255,255,.03)">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
           <span class="mono dm" style="font-size:9px;letter-spacing:.15em">PHASE 01</span>
@@ -517,6 +469,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
         <h3 class="hd2" style="font-size:clamp(16px,1.8vw,20px);color:#e4e4e7;margin-bottom:10px">2025 — Foundation</h3>
         <p class="bd" style="font-size:13px">Built the core AI agent architecture. Deployed autonomous systems for data analysis, trading execution, and brand communication. Launched 5 revenue-generating products. Proved the model.</p>
       </div>
+      <!-- PHASE 02 -->
       <div class="crd" style="padding:24px;border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.03)">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
           <span class="mono dm" style="font-size:9px;letter-spacing:.15em">PHASE 02</span>
@@ -525,6 +478,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
         <h3 class="hd2" style="font-size:clamp(16px,1.8vw,20px);color:#e4e4e7;margin-bottom:10px">2026 — Scale</h3>
         <p class="bd" style="font-size:13px">Scaling enterprise AI deployments. Custom implementations growing 15%+ month-over-month. Private edge shipping. SearchHive approaching millions. Building the revenue foundation for Phase 03.</p>
       </div>
+      <!-- PHASE 03 -->
       <div class="crd" style="padding:24px;border-color:rgba(255,255,255,.05);background:rgba(255,255,255,.03)">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
           <span class="mono dm" style="font-size:9px;letter-spacing:.15em">PHASE 03</span>
@@ -545,7 +499,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
   </div>
 </div>
 
-<!-- SLIDE 09: TEAM & IP -->
+<!-- ═══ SLIDE 09: TEAM & IP ═══ -->
 <div class="slide" data-idx="8">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -556,6 +510,8 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
   <div class="w">
     <div class="lbl" style="margin-bottom:40px">TEAM</div>
     <h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">Solo founder.<br><span class="mu">Complete ownership.</span></h2>
+
+    <!-- Section A: Founder -->
     <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:24px;max-width:620px">
       Built 5 profitable AI products from zero to ~$500K ARR with no outside funding. Infrastructure trusted by major DeFi protocols including our own TIDE and Hyperswap to handle critical systems. Touches every layer of the stack — from embedded firmware to AI agents to production infrastructure. Works fast. Ships faster.
     </p>
@@ -565,6 +521,8 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
       <div class="dash-item"><span>—</span><span>100+ custom AI implementations delivered to private clients</span></div>
       <div class="dash-item"><span>—</span><span>Moving from solo to team — actively seeking creative and engineering talent</span></div>
     </div>
+
+    <!-- Section B: IP Ownership -->
     <div class="crd" style="padding:24px;border-color:rgba(255,255,255,.05);background:rgba(255,255,255,.03)">
       <div class="mono dm" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px">PROPRIETARY TECHNOLOGY</div>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
@@ -574,11 +532,12 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
         <li style="font-family:Inter,sans-serif;font-size:13px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:16px;position:relative">Spider 2: Custom LLM specifically trained for high-frequency trading — proprietary<span style="position:absolute;left:0;color:#27272a">—</span></li>
       </ul>
     </div>
+
     <div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:24px">"Complete ownership means complete control. No dilution. No dependencies. No ceiling."</div>
   </div>
 </div>
 
-<!-- SLIDE 10: THE ASK -->
+<!-- ═══ SLIDE 10: THE ASK ═══ -->
 <div class="slide" data-idx="9">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="frame"></div>
@@ -600,11 +559,11 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
     </div>
     <div style="border:1px solid rgba(255,255,255,.08);padding:32px 48px;text-align:center;margin-bottom:32px">
       <div class="lbl" style="margin-bottom:12px">PRE-MONEY VALUATION</div>
-      <div class="hd" id="valuation" style="font-size:clamp(36px,5vw,56px);color:#fff;margin-bottom:12px" data-counter="3000000" data-display="$3M">$3M</div>
+      <div class="hd" style="font-size:clamp(36px,5vw,56px);color:#fff;margin-bottom:12px">$3M</div>
       <div class="mono" style="font-size:9px;color:#27272a;letter-spacing:.1em">SAFE · USE OF FUNDS: PHYSICAL PRODUCTION · ENGINEERING HIRES · OPERATIONS</div>
     </div>
     <div class="btn-row">
-      <a class="btn-p btn-cta" href="https://t.me/RealDoctaDG">LET'S TALK</a>
+      <a class="btn-p" href="https://t.me/RealDoctaDG">LET'S TALK</a>
       <a class="btn-s" href="#">REQUEST FULL DECK</a>
     </div>
     <div class="mono" style="font-size:9px;color:#27272a;letter-spacing:.15em;margin-top:48px">VENYM LABS © 2026</div>
@@ -615,229 +574,102 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 </div><!-- /viewport -->
 
 <script>
-(function(){
-var TOTAL=10;
-var slider=document.getElementById('slider');
-var viewport=document.getElementById('viewport');
-var progress=document.getElementById('progress');
-var counter=document.getElementById('counter');
-var dotsEl=document.getElementById('dots');
-var cursorDot=document.getElementById('cursor-dot');
-var cursorRing=document.getElementById('cursor-ring');
-var canvas=document.getElementById('particles');
-var ctx=canvas.getContext('2d');
-var current=0,vw=window.innerWidth,mouseX=0,mouseY=0;
-var soundEnabled=localStorage.getItem('venym-sound')==='1';
-var audioCtx=null;
-var animated={};
+const TOTAL = 10;
+const slider = document.getElementById('slider');
+const viewport = document.getElementById('viewport');
+const progress = document.getElementById('progress');
+const counter = document.getElementById('counter');
+const dotsEl = document.getElementById('dots');
+let current = 0;
+let vw = window.innerWidth;
 
-// LOADING SCREEN
-(function(){
-  var letters='VENYM LABS';
-  var container=document.getElementById('loader-letters');
-  letters.split('').forEach(function(ch,i){
-    var s=document.createElement('span');
-    s.textContent=ch===' '?'\u00A0':ch;
-    s.style.animationDelay=(i*50)+'ms';
-    container.appendChild(s);
-  });
-  setTimeout(function(){document.getElementById('loader').classList.add('done')},2500);
-  setTimeout(function(){document.getElementById('loader').style.display='none';document.querySelectorAll('.slide')[0].classList.add('active')},3100);
-})();
-
-// PARTICLES
-var particles=[];
-function initParticles(){
-  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
-  particles=[];
-  var count=window.innerWidth<768?50:150;
-  for(var i=0;i<count;i++){
-    particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5,o:Math.random()*.15+.05});
-  }
+// Build dots
+for(let i=0;i<TOTAL;i++){
+  const d = document.createElement('div');
+  d.className = 'dot' + (i===0?' active':'');
+  d.onclick = ()=> go(i);
+  dotsEl.appendChild(d);
 }
-initParticles();
-window.addEventListener('resize',function(){initParticles();size()});
-function drawParticles(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  for(var i=0;i<particles.length;i++){
-    var p=particles[i];
-    p.x+=p.vx;p.y+=p.vy;
-    if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;
-    if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;
-    var dx=p.x-mouseX,dy=p.y-mouseY,dist=Math.sqrt(dx*dx+dy*dy);
-    if(dist<200&&dist>0){var f=(200-dist)/200*.5;p.vx+=dx/dist*f;p.vy+=dy/dist*f;p.vx*=.98;p.vy*=.98}
-    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+p.o+')';ctx.fill();
-  }
-  requestAnimationFrame(drawParticles);
-}
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)drawParticles();
+const dots = dotsEl.querySelectorAll('.dot');
 
-// CUSTOM CURSOR
-var ringX=0,ringY=0;
-var isTouchDevice=false;
-document.addEventListener('touchstart',function(){if(!isTouchDevice){isTouchDevice=true;document.body.classList.add('touch-device')}},{once:true});
-document.addEventListener('mousemove',function(e){
-  mouseX=e.clientX;mouseY=e.clientY;
-  cursorDot.style.left=mouseX+'px';cursorDot.style.top=mouseY+'px';
-  if(window.innerWidth>768){cursorDot.style.opacity='1';cursorRing.style.opacity='1'}
-});
-function animateCursor(){
-  ringX+=(mouseX-ringX)*.12;ringY+=(mouseY-ringY)*.12;
-  cursorRing.style.left=ringX+'px';cursorRing.style.top=ringY+'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-document.querySelectorAll('a,button,.dot,.prod-item,.crd,.btn-p,.btn-s,.search-chip,.agent-node').forEach(function(el){
-  el.addEventListener('mouseenter',function(){cursorRing.classList.add('hover')});
-  el.addEventListener('mouseleave',function(){cursorRing.classList.remove('hover')});
-});
-
-// SOUND
-var soundBtn=document.getElementById('sound-btn');
-var soundWave=document.getElementById('sound-wave');
-var soundWave2=document.getElementById('sound-wave2');
-function updateSoundUI(){
-  soundWave.setAttribute('stroke',soundEnabled?'currentColor':'none');
-  soundWave2.setAttribute('stroke',soundEnabled?'currentColor':'none');
-  soundBtn.style.opacity=soundEnabled?'.5':'.2';
-}
-updateSoundUI();
-soundBtn.addEventListener('click',function(){soundEnabled=!soundEnabled;localStorage.setItem('venym-sound',soundEnabled?'1':'0');updateSoundUI()});
-function playTick(freq,dur,vol){
-  if(!soundEnabled||!audioCtx)return;
-  try{var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);o.frequency.value=freq;o.type='sine';g.gain.setValueAtTime(vol,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+dur);o.start();o.stop(audioCtx.currentTime+dur)}catch(e){}
-}
-document.addEventListener('click',function(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)()},{once:true});
-
-// DOTS
-for(var i=0;i<TOTAL;i++){var d=document.createElement('div');d.className='dot';d.onclick=(function(n){return function(){go(n)}})(i);dotsEl.appendChild(d)}
-var dots=dotsEl.querySelectorAll('.dot');
-
-// SIZE
 function size(){
-  vw=window.innerWidth;
-  slider.style.width=(vw*TOTAL)+'px';
-  var slides=slider.querySelectorAll('.slide');
-  for(var i=0;i<slides.length;i++)slides[i].style.width=vw+'px';
-  slider.style.transition='none';
-  slider.style.transform='translateX(-'+current*vw+'px)';
-  slider.offsetHeight;
-  slider.style.transition='transform .6s cubic-bezier(.77,0,.175,1)';
+  vw = window.innerWidth;
+  slider.style.width = (vw * TOTAL) + 'px';
+  const slides = slider.querySelectorAll('.slide');
+  slides.forEach(s => s.style.width = vw + 'px');
+  slider.style.transition = 'none';
+  slider.style.transform = `translateX(-${current * vw}px)`;
+  slider.offsetHeight; // reflow
+  slider.style.transition = 'transform .6s cubic-bezier(.77,0,.175,1)';
 }
 size();
+window.addEventListener('resize', size);
 
-// NAV
 function go(n){
-  if(n<0)n=0;if(n>=TOTAL)n=TOTAL-1;
-  current=n;
-  slider.style.transform='translateX(-'+current*vw+'px)';
-  progress.style.width=((current+1)/TOTAL*100)+'%';
-  counter.textContent=String(current+1).padStart(2,'0')+' / '+String(TOTAL).padStart(2,'0');
-  for(var i=0;i<dots.length;i++)dots[i].className='dot'+(i===current?' active':'');
-  var slides=slider.querySelectorAll('.slide');
-  for(var i=0;i<slides.length;i++){if(i===current)slides[i].classList.add('active');else slides[i].classList.remove('active')}
-  playTick(300,.15,.05);
-  triggerEffects(current);
+  if(n<0) n=0;
+  if(n>=TOTAL) n=TOTAL-1;
+  current = n;
+  slider.style.transform = `translateX(-${current * vw}px)`;
+  progress.style.width = ((current+1)/TOTAL*100)+'%';
+  counter.textContent = String(current+1).padStart(2,'0') + ' / ' + String(TOTAL).padStart(2,'0');
+  dots.forEach((d,i)=> d.className = 'dot'+(i===current?' active':''));
 }
 
-// KEYBOARD
-document.addEventListener('keydown',function(e){
+// Keyboard
+document.addEventListener('keydown', e => {
   if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();go(current+1)}
   if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();go(current-1)}
   if(e.key==='Home'){e.preventDefault();go(0)}
   if(e.key==='End'){e.preventDefault();go(TOTAL-1)}
 });
 
-// WHEEL
-var wheelLock=false;
-document.addEventListener('wheel',function(e){
-  if(wheelLock)return;wheelLock=true;
-  if(e.deltaY>0)go(current+1);else if(e.deltaY<0)go(current-1);
-  setTimeout(function(){wheelLock=false},800);
-},{passive:true});
-
-// TOUCH
-var touchX=0,touchY=0,touchActive=false;
-document.addEventListener('touchstart',function(e){touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;touchActive=true},{passive:true});
-document.addEventListener('touchmove',function(e){if(!touchActive)return;var dx=e.touches[0].clientX-touchX,dy=e.touches[0].clientY-touchY;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>10)e.preventDefault()},{passive:false});
-document.addEventListener('touchend',function(e){if(!touchActive)return;touchActive=false;var dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>60){if(dx<0)go(current+1);else go(current-1)}},{passive:true});
-
-// SLIDE EFFECTS
-function easeOutExpo(t){return t===1?1:1-Math.pow(2,-10*t)}
-function triggerEffects(idx){
-  // Traction counters (slide 4)
-  if(idx===4&&!animated[4]){
-    animated[4]=true;
-    var slide=document.querySelector('[data-idx="4"]');
-    var vals=slide.querySelectorAll('.metric-value');
-    vals.forEach(function(el,vi){
-      var target=parseInt(el.dataset.counter)||0;
-      var prefix=el.dataset.prefix||'';
-      var suffix=el.dataset.suffix||'';
-      var original=el.dataset.original;
-      var dur=vi<2?800:vi===2?1500:1200;
-      var start=performance.now();
-      function tick(now){
-        var p=Math.min((now-start)/dur,1);var v=Math.round(easeOutExpo(p)*target);
-        if(el.childNodes.length>0)el.childNodes[0].textContent=prefix+v.toLocaleString()+suffix;
-        if(p<1)requestAnimationFrame(tick);else{if(el.childNodes.length>0)el.childNodes[0].textContent=original;playTick(600,.03,.02)}
-      }
-      requestAnimationFrame(tick);
-    });
-    var sp=document.getElementById('sparkline');
-    if(sp)setTimeout(function(){sp.style.transition='stroke-dashoffset 1.5s ease';sp.style.strokeDashoffset='0'},300);
+// Mouse wheel (debounced)
+let wheelLock = false;
+document.addEventListener('wheel', e => {
+  if(wheelLock) return;
+  // Check if scrollable content inside slide
+  const slide = slider.children[current];
+  const scrollable = slide.querySelector('[style*="overflow"]');
+  if(scrollable){
+    const atTop = scrollable.scrollTop <= 0;
+    const atBottom = scrollable.scrollTop + scrollable.clientHeight >= scrollable.scrollHeight - 2;
+    if(e.deltaY < 0 && !atTop) return;
+    if(e.deltaY > 0 && !atBottom) return;
   }
-  // Market bars (slide 6)
-  if(idx===6&&!animated[6]){
-    animated[6]=true;
-    setTimeout(function(){document.querySelectorAll('.mkt-fill').forEach(function(f){f.style.width=f.dataset.target+'%'})},200);
+  wheelLock = true;
+  if(e.deltaY > 0) go(current+1);
+  else if(e.deltaY < 0) go(current-1);
+  setTimeout(()=> wheelLock=false, 800);
+}, {passive:true});
+
+// Touch/swipe
+let touchX=0, touchY=0, touchActive=false;
+document.addEventListener('touchstart', e => {
+  touchX = e.touches[0].clientX;
+  touchY = e.touches[0].clientY;
+  touchActive = true;
+}, {passive:true});
+document.addEventListener('touchmove', e => {
+  if(!touchActive) return;
+  const dx = e.touches[0].clientX - touchX;
+  const dy = e.touches[0].clientY - touchY;
+  if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10){
+    e.preventDefault();
   }
-  // Valuation counter (slide 9)
-  if(idx===9&&!animated[9]){
-    animated[9]=true;
-    var el=document.getElementById('valuation');
-    var dur=2000;var start=performance.now();
-    function tick(now){
-      var p=Math.min((now-start)/dur,1);var v=Math.round(easeOutExpo(p)*3000000);
-      el.textContent='$'+v.toLocaleString();
-      if(p<1)requestAnimationFrame(tick);else{el.textContent='$3M';el.style.textShadow='0 0 30px rgba(255,255,255,.15)';setTimeout(function(){el.style.textShadow='none'},2000);playTick(600,.03,.02)}
-    }
-    requestAnimationFrame(tick);
+}, {passive:false});
+document.addEventListener('touchend', e => {
+  if(!touchActive) return;
+  touchActive = false;
+  const dx = e.changedTouches[0].clientX - touchX;
+  const dy = e.changedTouches[0].clientY - touchY;
+  if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 60){
+    if(dx < 0) go(current+1);
+    else go(current-1);
   }
-}
+}, {passive:true});
 
-// 3D TILT
-window.tiltCard=function(e,el){
-  var r=el.getBoundingClientRect();
-  var x=e.clientX-r.left,y=e.clientY-r.top;
-  var cx=r.width/2,cy=r.height/2;
-  var rx=(cy-y)*.08,ry=(x-cx)*.08;
-  el.style.transform='perspective(800px) rotateX('+rx+'deg) rotateY('+ry+'deg)';
-  el.style.backgroundImage='radial-gradient(circle at '+((x/r.width)*100)+'% '+((y/r.height)*100)+'%, rgba(255,255,255,.03) 0%, transparent 60%)';
-};
-window.resetCard=function(el){el.style.transform='';el.style.backgroundImage=''};
-
-// SEARCHHIVE DEMO
-window.doSearchHive=async function(){
-  var q=document.getElementById('sh-query').value.trim();
-  var out=document.getElementById('sh-output');
-  if(!q)return;
-  out.textContent='Searching...';out.style.color='rgba(255,255,255,.3)';
-  try{
-    var res=await fetch('/api/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:q})});
-    if(!res.ok)throw new Error('API error');
-    var data=await res.json();
-    if(data.results&&data.results.length>0){
-      out.style.color='rgba(34,197,94,.6)';
-      out.textContent=data.results.slice(0,3).map(function(r,i){return(i+1)+'. '+r.title+'\n   '+r.url}).join('\n\n');
-    }else{out.style.color='#52525b';out.textContent='No results found.'}
-  }catch(e){out.style.color='rgba(239,68,68,.6)';out.textContent='API unavailable in preview.\nVisit searchhive.dev for live demo.'}
-  playTick(600,.03,.02);
-};
-
-// INIT
+// Init
 go(0);
-})();
 </script>
 
 </body>
