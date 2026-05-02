@@ -33,7 +33,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100}
 .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08);cursor:none;transition:all .3s}
 .dot.active{background:rgba(255,255,255,.4);transform:scale(1.3)}
-.counter{position:fixed;bottom:24px;left:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;color:#27272a;z-index:100}
+.counter{position:fixed;bottom:24px;left:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;color:#52525b;z-index:100}
 #sound-btn{position:fixed;bottom:24px;right:24px;z-index:100;background:none;border:1px solid rgba(255,255,255,.08);padding:6px 8px;cursor:none;opacity:.2;transition:opacity .3s}
 #sound-btn:hover{opacity:.5}#sound-btn svg{display:block;width:16px;height:16px}
 @keyframes bf{0%,100%{transform:scale(1);opacity:.03}50%{transform:scale(1.1);opacity:.06}}
@@ -41,10 +41,10 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .b1{top:-15%;left:-10%;width:50%;height:50%;background:rgba(255,255,255,.03);animation:bf 15s ease-in-out infinite}
 .b2{bottom:-20%;right:-10%;width:60%;height:60%;background:rgba(255,255,255,.02);animation:bf 18s ease-in-out infinite 3s}
 .mono{font-family:'JetBrains Mono',monospace}
-.lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#27272a}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#52525b}
 .hd{font-family:'Inter',sans-serif;font-weight:500;letter-spacing:-.04em;line-height:.88}
-.bd{font-family:'Inter',sans-serif;font-weight:300;color:#a1a1aa;line-height:1.7}
-.mu{color:#52525b}
+.bd{font-family:'Inter',sans-serif;font-weight:300;color:#d4d4d8;line-height:1.7}
+.mu{color:#d4d4d8}
 .w{position:relative;z-index:10;width:100%;max-width:900px;padding:80px 48px}
 .rw{display:inline;opacity:0;filter:blur(14px);transform:translateY(14px);transition:opacity .5s cubic-bezier(.16,1,.3,1),filter .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
 .slide.active .rw{opacity:1;filter:blur(0);transform:translateY(0)}
@@ -54,22 +54,22 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .tg-g{border-color:rgba(34,197,94,.2);color:rgba(34,197,94,.6);background:rgba(34,197,94,.05)}
 .tg-y{border-color:rgba(234,179,8,.2);color:rgba(234,179,8,.6);background:rgba(234,179,8,.05)}
 .tg-b{border-color:rgba(59,130,246,.2);color:rgba(59,130,246,.6);background:rgba(59,130,246,.05)}
-.tg-w{border-color:rgba(255,255,255,.08);color:#a1a1aa;background:rgba(255,255,255,.03)}
+.tg-w{border-color:rgba(255,255,255,.08);color:#d4d4d8;background:rgba(255,255,255,.03)}
 .metric-box{border:1px solid rgba(255,255,255,.05);padding:20px;text-align:center;background:rgba(255,255,255,.03);opacity:0;transform:translateY(16px);filter:blur(8px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1),filter .6s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
 .slide.active .metric-box{opacity:1;transform:translateY(0);filter:blur(0)}
-.metric-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#27272a;margin-bottom:8px}
-.metric-value{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(18px,2.5vw,28px);color:#e4e4e7;letter-spacing:-.02em}
+.metric-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#71717a;margin-bottom:8px}
+.metric-value{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(18px,2.5vw,28px);color:#f4f4f5;letter-spacing:-.02em}
 .pipe{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);padding:16px 20px;opacity:0;transform:translateY(12px);filter:blur(6px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1),filter .6s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
 .slide.active .pipe{opacity:1;transform:translateY(0);filter:blur(0)}
 .pipe-track{display:flex;align-items:center;gap:6px;overflow-x:auto;padding-bottom:4px}
-.pipe-n{font-family:'JetBrains Mono',monospace;font-size:10px;white-space:nowrap;padding:5px 12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:#a1a1aa}
-.pipe-a{font-family:'JetBrains Mono',monospace;font-size:9px;color:#27272a;white-space:nowrap}
+.pipe-n{font-family:'JetBrains Mono',monospace;font-size:10px;white-space:nowrap;padding:5px 12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);color:#d4d4d8}
+.pipe-a{font-family:'JetBrains Mono',monospace;font-size:9px;color:#71717a;white-space:nowrap}
 .pill{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);padding:6px 14px;display:inline-flex;align-items:center;gap:8px}
 .pill-d{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.08)}
 .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .btn-p{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;background:#fff;color:#000;padding:14px 32px;font-weight:700;text-decoration:none;display:inline-block;border:none;cursor:none;transition:opacity .3s,transform .3s}
 .btn-p:hover{opacity:.85;transform:scale(1.02)}
-.btn-s{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;border:1px solid rgba(255,255,255,.08);color:#a1a1aa;padding:14px 32px;cursor:none;display:inline-block;text-decoration:none;background:transparent;transition:border-color .3s}
+.btn-s{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;border:1px solid rgba(255,255,255,.08);color:#d4d4d8;padding:14px 32px;cursor:none;display:inline-block;text-decoration:none;background:transparent;transition:border-color .3s}
 .btn-s:hover{border-color:rgba(255,255,255,.2)}
 @keyframes cp{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.15)}50%{box-shadow:0 0 20px 4px rgba(255,255,255,.08)}}
 .btn-cta{animation:cp 2.5s infinite}
@@ -83,8 +83,8 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .agent-card{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);display:grid;grid-template-columns:140px 1fr 160px;gap:1px;opacity:0;transform:translateY(12px);filter:blur(6px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),filter .5s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
 .slide.active .agent-card{opacity:1;transform:translateY(0);filter:blur(0)}
 .agent-card>div{padding:16px 20px}.agent-card>div:not(:last-child){border-right:1px solid rgba(255,255,255,.05)}
-.agent-hdr{font-family:'JetBrains Mono',monospace;font-size:8px;color:#27272a;margin-bottom:6px}
-.agent-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;color:#e4e4e7}
+.agent-hdr{font-family:'JetBrains Mono',monospace;font-size:8px;color:#71717a;margin-bottom:6px}
+.agent-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;color:#f4f4f5}
 .frame{position:absolute;inset:40px;border:1px solid rgba(255,255,255,.04);pointer-events:none;z-index:1}
 .corners{position:absolute;inset:24px;pointer-events:none;z-index:2}
 .corner{position:absolute;width:20px;height:20px}
@@ -96,14 +96,14 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .dash-list{display:flex;flex-direction:column;gap:16px}
 .dash-item{display:flex;gap:16px;align-items:flex-start;opacity:0;transform:translateY(12px);filter:blur(6px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),filter .5s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
 .slide.active .dash-item{opacity:1;transform:translateY(0);filter:blur(0)}
-.dash-item span:first-child{font-family:'JetBrains Mono',monospace;font-size:14px;color:#27272a;line-height:1.6;flex-shrink:0}
-.dash-item span:last-child{font-family:'Inter',sans-serif;font-weight:300;color:#a1a1aa;line-height:1.7}
+.dash-item span:first-child{font-family:'JetBrains Mono',monospace;font-size:14px;color:#71717a;line-height:1.6;flex-shrink:0}
+.dash-item span:last-child{font-family:'Inter',sans-serif;font-weight:300;color:#d4d4d8;line-height:1.7}
 .mkt-bar{margin-top:12px;height:2px;background:rgba(255,255,255,.05);overflow:hidden;border-radius:1px}
 .mkt-fill{height:100%;width:0%;transition:width 1.5s cubic-bezier(.16,1,.3,1)}
-#sh-query{cursor:none}#sh-query::placeholder{color:#27272a}
+#sh-query{cursor:none}#sh-query::placeholder{color:#52525b}
 .search-chips{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
-.search-chip{font-family:'JetBrains Mono',monospace;font-size:9px;color:#52525b;padding:3px 8px;border:1px solid rgba(255,255,255,.05);cursor:none;transition:border-color .2s,color .2s}
-.search-chip:hover{border-color:rgba(255,255,255,.15);color:#a1a1aa}
+.search-chip{font-family:'JetBrains Mono',monospace;font-size:9px;color:#d4d4d8;padding:3px 8px;border:1px solid rgba(255,255,255,.1);cursor:none;transition:border-color .2s,color .2s}
+.search-chip:hover{border-color:rgba(255,255,255,.2);color:#d4d4d8}
 @media(max-width:768px){.w{padding:48px 20px}.slide{align-items:flex-start}.prod-grid{grid-template-columns:1fr}.agent-card{grid-template-columns:1fr}.agent-card>div:not(:last-child){border-right:none;border-bottom:1px solid rgba(255,255,255,.05)}.btn-row{flex-direction:column;align-items:stretch}.btn-row .btn-p,.btn-row .btn-s{padding:14px 20px;text-align:center;width:100%;display:block}.dots{right:12px;gap:6px}.dot{width:5px;height:5px}.frame{inset:20px}.corners{inset:12px}body{cursor:auto!important}#cursor-dot,#cursor-ring,#sound-btn{display:none!important}}
 @media(prefers-reduced-motion:reduce){.slide{transition:opacity .2s!important;transform:none!important}.rw,.metric-box,.pipe,.compare-col,.prod-item,.agent-card,.dash-item{transition:opacity .15s!important;transform:none!important;filter:none!important}*{animation-duration:.01ms!important;transition-duration:.15s!important}.noise,#particles{display:none}}
 </style>
@@ -136,7 +136,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w">
 <div class="lbl" style="margin-bottom:40px">THE PROBLEM</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">AI stops at screens.<br><span class="mu">The real world doesn't.</span></h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:24px">AI stops at screens.<br><span class="mu">The real world doesn't.</span></h2>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:40px;max-width:620px">Every major AI company is building for the digital layer. Chat interfaces, API calls, software tools. Meanwhile the physical world — manufacturing, logistics, drones, robotics — runs on intelligence that hasn't changed in decades.</p>
 <div class="dash-list">
 <div class="dash-item" style="--d:100ms"><span>—</span><span>Enterprise AI spending will hit $1.5 trillion in 2025 — Gartner. Almost all of it targets software. The gap between digital AI and physical AI is the largest undisrupted market in technology.</span></div>
@@ -144,7 +144,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="dash-item" style="--d:300ms"><span>—</span><span>The companies best positioned to build this layer are the ones who already ship AI products that work. Not research labs. Not chatbot companies. Builders.</span></div>
 <div class="dash-item" style="--d:400ms"><span>—</span><span>The window to own the physical intelligence layer is open right now. First-mover advantage in autonomous systems compounds fast.</span></div>
 </div>
-<div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:40px">"The next $10T market isn't another chatbot. It's intelligence that moves."</div>
+<div class="mono" style="font-size:10px;color:#d4d4d8;font-style:italic;margin-top:40px">"The next $10T market isn't another chatbot. It's intelligence that moves."</div>
 </div>
 </div>
 
@@ -155,50 +155,50 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w">
 <div class="lbl" style="margin-bottom:40px">PRODUCTS</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">Five products.<br><span class="mu">All live. All revenue.</span></h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:24px">Five products.<br><span class="mu">All live. All revenue.</span></h2>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:620px">Not a roadmap. A product line. Every vertical ships real revenue.</p>
 <div class="prod-grid" style="margin-bottom:24px">
 <div class="prod-item" style="--d:0ms" onmousemove="tiltCard(event,this)" onmouseleave="resetCard(this)">
 <div class="agent-hdr" style="margin-bottom:8px">SEARCH API</div>
-<div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#e4e4e7;margin-bottom:12px;letter-spacing:.04em">SearchHive</div>
+<div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#f4f4f5;margin-bottom:12px;letter-spacing:.04em">SearchHive</div>
 <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>Millions of queries processed</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>1,000+ registered developers</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>Undercuts every major search API on price</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span><span class="tg tg-g">LIVE · REVENUE</span></li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>Millions of queries processed</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>1,000+ registered developers</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>Undercuts every major search API on price</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span><span class="tg tg-g">LIVE · REVENUE</span></li>
 </ul>
 </div>
 <div class="prod-item" style="--d:80ms" onmousemove="tiltCard(event,this)" onmouseleave="resetCard(this)">
 <div class="agent-hdr" style="margin-bottom:8px">DEX PROTOCOL</div>
-<div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#e4e4e7;margin-bottom:12px;letter-spacing:.04em">Hyperswap</div>
+<div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#f4f4f5;margin-bottom:12px;letter-spacing:.04em">Hyperswap</div>
 <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>$10M+ trading volume</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>ML-powered swap routing</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>Real-time market data ingestion</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span><span class="tg tg-g">LIVE · REVENUE</span></li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>$10M+ trading volume</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>ML-powered swap routing</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>Real-time market data ingestion</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span><span class="tg tg-g">LIVE · REVENUE</span></li>
 </ul>
 </div>
 <div class="prod-item" style="--d:160ms" onmousemove="tiltCard(event,this)" onmouseleave="resetCard(this)">
 <div class="agent-hdr" style="margin-bottom:8px">PERP EXECUTION</div>
-<div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#e4e4e7;margin-bottom:12px;letter-spacing:.04em">TIDE Protocol</div>
+<div style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#f4f4f5;margin-bottom:12px;letter-spacing:.04em">TIDE Protocol</div>
 <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>$10M+ volume processed</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>ML-powered execution layer</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span>Intent-based perp routing</li>
-<li style="font-size:12px;font-weight:300;color:#a1a1aa;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#27272a">—</span><span class="tg tg-g">LIVE · REVENUE</span></li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>$10M+ volume processed</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>ML-powered execution layer</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span>Intent-based perp routing</li>
+<li style="font-size:12px;font-weight:300;color:#d4d4d8;line-height:1.5;padding-left:14px;position:relative"><span style="position:absolute;left:0;color:#52525b">—</span><span class="tg tg-g">LIVE · REVENUE</span></li>
 </ul>
 </div>
 </div>
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px">
-<div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#a1a1aa">CUSTOM AI — 100+ DELIVERED</span></div>
-<div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#a1a1aa">WORKFLOW AUTOMATION — LIVE</span></div>
-<div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#a1a1aa">PRIVATE EDGE — SHIPPED</span></div>
+<div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#d4d4d8">CUSTOM AI — 100+ DELIVERED</span></div>
+<div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#d4d4d8">WORKFLOW AUTOMATION — LIVE</span></div>
+<div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#d4d4d8">PRIVATE EDGE — SHIPPED</span></div>
 </div>
 <div style="border:1px solid rgba(255,255,255,.05);background:rgba(0,0,0,.4);padding:16px;font-family:'JetBrains Mono',monospace">
-<div style="font-size:9px;color:#27272a;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px">LIVE API DEMO — SEARCHHIVE</div>
+<div style="font-size:9px;color:#52525b;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px">LIVE API DEMO — SEARCHHIVE</div>
 <div style="display:flex;gap:8px">
 <input id="sh-query" type="text" placeholder="Try a search..." style="flex:1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:8px 12px;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;outline:none" onkeydown="if(event.key==='Enter')doSearchHive()">
-<button onclick="doSearchHive()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:8px 16px;color:#a1a1aa;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;cursor:none;text-transform:uppercase">SEARCH</button>
+<button onclick="doSearchHive()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:8px 16px;color:#d4d4d8;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;cursor:none;text-transform:uppercase">SEARCH</button>
 </div>
 <div class="search-chips">
 <span class="search-chip" onclick="document.getElementById('sh-query').value='Bitcoin price';doSearchHive()">Bitcoin price</span>
@@ -207,7 +207,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 </div>
 <div id="sh-output" style="margin-top:12px;min-height:24px;font-size:11px;color:rgba(34,197,94,.6);line-height:1.6;white-space:pre-wrap;overflow-y:auto;max-height:120px"></div>
 </div>
-<div class="mono" style="font-size:10px;color:#52525b;font-style:italic;margin-top:16px">"Every product listed is deployed and generating revenue. Not a prototype. Not a waitlist."</div>
+<div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:16px">"Every product listed is deployed and generating revenue. Not a prototype. Not a waitlist."</div>
 </div>
 </div>
 
@@ -218,23 +218,23 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w">
 <div class="lbl" style="margin-bottom:40px">BUSINESS MODEL</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">Revenue is not theoretical.</h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:24px">Revenue is not theoretical.</h2>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:620px">Multiple revenue streams. No single point of failure. Every product monetizes differently.</p>
 <div style="display:flex;flex-direction:column;gap:12px">
 <div class="compare-col" style="--d:0ms">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#27272a;margin:0">SearchHive — SaaS</h4><span class="tg tg-g">RECURRING</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#52525b;margin:0">SearchHive — SaaS</h4><span class="tg tg-g">RECURRING</span></div>
 <p class="bd" style="font-size:13px">Per-query pricing below every major search API competitor. Developer subscriptions. Enterprise contracts. The closest product to earning millions. Predictable, scalable, compounding.</p>
 </div>
 <div class="compare-col" style="--d:100ms">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#27272a;margin:0">Hyperswap + TIDE — DeFi</h4><span class="tg tg-b">VOLUME-SCALED</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#52525b;margin:0">Hyperswap + TIDE — DeFi</h4><span class="tg tg-b">VOLUME-SCALED</span></div>
 <p class="bd" style="font-size:13px">Swap fees on $20M+ combined volume across both protocols. ML algorithms optimize routing in real-time. Revenue scales directly with volume and market activity.</p>
 </div>
 <div class="compare-col" style="--d:200ms">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#27272a;margin:0">Custom AI — Services</h4><span class="tg tg-y">HIGH-MARGIN</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#52525b;margin:0">Custom AI — Services</h4><span class="tg tg-y">HIGH-MARGIN</span></div>
 <p class="bd" style="font-size:13px">100+ custom AI solutions delivered to clients. Consulting revenue funds product development. Every custom build feeds back into the platform. Proven demand, proven delivery.</p>
 </div>
 </div>
-<div class="mono" style="font-size:10px;color:#52525b;font-style:italic;margin-top:32px">"We don't have a single revenue model. We have a revenue engine."</div>
+<div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:32px">"We don't have a single revenue model. We have a revenue engine."</div>
 </div>
 </div>
 
@@ -245,7 +245,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w">
 <div class="lbl" style="margin-bottom:40px">TRACTION</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:32px">Numbers, not promises.</h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:32px">Numbers, not promises.</h2>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px">
 <div class="metric-box" style="--d:0ms"><div class="metric-label">PRODUCTS LIVE</div><div class="metric-value" data-counter="5">0</div></div>
 <div class="metric-box" style="--d:100ms"><div class="metric-label">COMBINED VOLUME</div><div class="metric-value"><span data-counter="20" data-prefix="$" data-suffix="M+">$0M+</span></div></div>
@@ -255,7 +255,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="metric-box" style="--d:500ms"><div class="metric-label">REVENUE STATUS</div><div class="metric-value" style="color:rgba(34,197,94,.7)">ACTIVE</div></div>
 </div>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);max-width:620px">Solo founder. No employees. No VC funding. Five products live, five enterprise clients, $20M+ in protocol volume, 15% month-over-month growth. Every metric above is real, verifiable, and current.</p>
-<div class="mono" style="font-size:10px;color:#52525b;font-style:italic;margin-top:24px">"What other pre-seed team has shipped this much?"</div>
+<div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:24px">"What other pre-seed team has shipped this much?"</div>
 </div>
 </div>
 
@@ -266,7 +266,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w">
 <div class="lbl" style="margin-bottom:40px">THE STACK</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">Four agents.<br><span class="mu">One intelligence layer.</span></h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:24px">Four agents.<br><span class="mu">One intelligence layer.</span></h2>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:620px">Every product runs on the same agent architecture. Four specialized agents, one unified system. Each handles a domain. Together, they operate autonomously.</p>
 <div class="agent-cards">
 <div class="agent-card" style="--d:0ms">
@@ -300,21 +300,21 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w">
 <div class="lbl" style="margin-bottom:40px">MARKET</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">Three markets.<br><span class="mu">One platform.</span></h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:24px">Three markets.<br><span class="mu">One platform.</span></h2>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:620px">Each product targets a distinct market. The platform unifies them. Expansion isn't diversification — it's vertical integration of intelligence.</p>
 <div style="display:flex;flex-direction:column;gap:20px">
 <div class="compare-col" style="--d:0ms">
-<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#a1a1aa">AI Software</span><span class="mono" style="font-size:11px;color:#e4e4e7">$1.5T</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#d4d4d8">AI Software</span><span class="mono" style="font-size:11px;color:#f4f4f5">$1.5T</span></div>
 <div class="mkt-bar"><div class="mkt-fill" data-width="100" style="background:rgba(255,255,255,.15)"></div></div>
 <p class="bd" style="font-size:11px;margin-top:8px;margin-bottom:0">Enterprise AI spending — Gartner 2025. SearchHive targets the search API layer. Custom AI targets the solutions layer.</p>
 </div>
 <div class="compare-col" style="--d:150ms">
-<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#a1a1aa">Drones &amp; Autonomous Systems</span><span class="mono" style="font-size:11px;color:#e4e4e7">$163B</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#d4d4d8">Drones &amp; Autonomous Systems</span><span class="mono" style="font-size:11px;color:#f4f4f5">$163B</span></div>
 <div class="mkt-bar"><div class="mkt-fill" data-width="65" style="background:rgba(59,130,246,.3)"></div></div>
 <p class="bd" style="font-size:11px;margin-top:8px;margin-bottom:0">Commercial drone market by 2030. The physical intelligence layer applies directly — navigation, sensing, decision-making.</p>
 </div>
 <div class="compare-col" style="--d:300ms">
-<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#a1a1aa">Robotics &amp; Automation</span><span class="mono" style="font-size:11px;color:#e4e4e7">$140B</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#d4d4d8">Robotics &amp; Automation</span><span class="mono" style="font-size:11px;color:#f4f4f5">$140B</span></div>
 <div class="mkt-bar"><div class="mkt-fill" data-width="55" style="background:rgba(234,179,8,.3)"></div></div>
 <p class="bd" style="font-size:11px;margin-top:8px;margin-bottom:0">Industrial robotics market. The agent architecture scales from software to hardware — same intelligence layer, new form factor.</p>
 </div>
@@ -329,15 +329,15 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w" style="text-align:center;max-width:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%">
 <div class="lbl" style="margin-bottom:40px">VISION</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">The intelligence layer<br><span class="mu">for everything that moves.</span></h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:24px">The intelligence layer<br><span class="mu">for everything that moves.</span></h2>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:560px">We started with search. Moved to finance. Now we are building the intelligence layer that connects digital AI to physical systems. Drones that see. Robots that decide. Systems that think.</p>
 <div class="pipe" style="width:100%;max-width:480px;--d:200ms">
 <div class="agent-hdr" style="margin-bottom:10px">THE ROADMAP</div>
-<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="tg tg-g">PHASE 01 — DONE</span><span class="mono" style="font-size:10px;color:#a1a1aa">Digital Intelligence</span></div>
-<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="tg tg-y">PHASE 02 — CURRENT</span><span class="mono" style="font-size:10px;color:#a1a1aa">Physical Expansion</span></div>
-<div style="display:flex;align-items:center;gap:8px"><span class="tg tg-w">PHASE 03 — NEXT</span><span class="mono" style="font-size:10px;color:#a1a1aa">Autonomous Systems</span></div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="tg tg-g">PHASE 01 — DONE</span><span class="mono" style="font-size:10px;color:#d4d4d8">Digital Intelligence</span></div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="tg tg-y">PHASE 02 — CURRENT</span><span class="mono" style="font-size:10px;color:#d4d4d8">Physical Expansion</span></div>
+<div style="display:flex;align-items:center;gap:8px"><span class="tg tg-w">PHASE 03 — NEXT</span><span class="mono" style="font-size:10px;color:#d4d4d8">Autonomous Systems</span></div>
 </div>
-<div class="mono" style="font-size:10px;color:#52525b;font-style:italic;margin-top:24px">We are not pivoting to drones. We are expanding intelligence to the physical world.</div>
+<div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:24px">We are not pivoting to drones. We are expanding intelligence to the physical world.</div>
 </div>
 </div>
 
@@ -348,7 +348,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w">
 <div class="lbl" style="margin-bottom:40px">TEAM AND IP</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">Solo founder.<br><span class="mu">Full-stack output.</span></h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:24px">Solo founder.<br><span class="mu">Full-stack output.</span></h2>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:620px">One person built and operates every product listed in this deck. From architecture to deployment to revenue. No employees. No contractors. No excuses.</p>
 <div class="dash-list">
 <div class="dash-item" style="--d:0ms"><span>—</span><span>Full-stack AI engineer with deep expertise in language models, agent architectures, real-time data systems, and DeFi protocols.</span></div>
@@ -357,7 +357,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="dash-item" style="--d:300ms"><span>—</span><span>Created custom AI agents (Vex, VoidBot) running autonomously on Telegram — trading, research, encrypted communications.</span></div>
 <div class="dash-item" style="--d:400ms"><span>—</span><span>Operating at the intersection of AI, finance, and physical systems — the exact convergence where the next decade value lives.</span></div>
 </div>
-<div class="mono" style="font-size:10px;color:#52525b;font-style:italic;margin-top:32px">When one person can do what teams do, imagine what happens with resources.</div>
+<div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:32px">When one person can do what teams do, imagine what happens with resources.</div>
 </div>
 </div>
 
@@ -368,19 +368,19 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="corners"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
 <div class="w" style="text-align:center;max-width:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%">
 <div class="lbl" style="margin-bottom:40px">THE ASK</div>
-<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#e4e4e7;margin-bottom:24px">The price of entry<br><span class="mu">increases every quarter.</span></h2>
+<h2 class="hd" style="font-size:clamp(24px,3.8vw,44px);color:#f4f4f5;margin-bottom:24px">The price of entry<br><span class="mu">increases every quarter.</span></h2>
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:560px">We are raising a pre-seed SAFE. 3M valuation cap. Funds go to scaling SearchHive revenue, expanding the agent platform, and beginning the physical intelligence build — drones and autonomous systems.</p>
 <div class="pipe" style="width:100%;max-width:480px;margin-bottom:32px;--d:200ms">
 <div class="agent-hdr" style="margin-bottom:10px">TERMS</div>
-<div style="display:flex;justify-content:space-between;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#a1a1aa">Instrument</span><span class="mono" style="font-size:11px;color:#e4e4e7">SAFE (YC Post-Money)</span></div>
-<div style="display:flex;justify-content:space-between;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#a1a1aa">Valuation Cap</span><span class="mono" style="font-size:11px;color:#e4e4e7">\,000,000</span></div>
-<div style="display:flex;justify-content:space-between"><span class="mono" style="font-size:11px;color:#a1a1aa">Use of Funds</span><span class="mono" style="font-size:11px;color:#e4e4e7">Scale + Build</span></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#d4d4d8">Instrument</span><span class="mono" style="font-size:11px;color:#f4f4f5">SAFE (YC Post-Money)</span></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:8px"><span class="mono" style="font-size:11px;color:#d4d4d8">Valuation Cap</span><span class="mono" style="font-size:11px;color:#f4f4f5">\,000,000</span></div>
+<div style="display:flex;justify-content:space-between"><span class="mono" style="font-size:11px;color:#d4d4d8">Use of Funds</span><span class="mono" style="font-size:11px;color:#f4f4f5">Scale + Build</span></div>
 </div>
 <div class="btn-row" style="margin-bottom:24px">
 <a href="https://t.me/RealDoctaDG" class="btn-p btn-cta" target="_blank">LET'S TALK</a>
 <a href="https://github.com/doctadg/venym-investor-deck" class="btn-s" target="_blank">REQUEST FULL DECK</a>
 </div>
-<div class="mono" style="font-size:10px;color:#27272a">@RealDoctaDG</div>
+<div class="mono" style="font-size:10px;color:#52525b">@RealDoctaDG</div>
 </div>
 </div>
 
