@@ -41,7 +41,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .b1{top:-15%;left:-10%;width:50%;height:50%;background:rgba(255,255,255,.03);animation:bf 15s ease-in-out infinite}
 .b2{bottom:-20%;right:-10%;width:60%;height:60%;background:rgba(255,255,255,.02);animation:bf 18s ease-in-out infinite 3s}
 .mono{font-family:'JetBrains Mono',monospace}
-.lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#52525b}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.5em;text-transform:uppercase;color:#a1a1aa}
 .hd{font-family:'Inter',sans-serif;font-weight:500;letter-spacing:-.04em;line-height:.88}
 .bd{font-family:'Inter',sans-serif;font-weight:300;color:#d4d4d8;line-height:1.7}
 .mu{color:#d4d4d8}
@@ -57,7 +57,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .tg-w{border-color:rgba(255,255,255,.08);color:#d4d4d8;background:rgba(255,255,255,.03)}
 .metric-box{border:1px solid rgba(255,255,255,.05);padding:20px;text-align:center;background:rgba(255,255,255,.03);opacity:0;transform:translateY(16px);filter:blur(8px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1),filter .6s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
 .slide.active .metric-box{opacity:1;transform:translateY(0);filter:blur(0)}
-.metric-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#71717a;margin-bottom:8px}
+.metric-label{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a1a1aa;margin-bottom:8px}
 .metric-value{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(18px,2.5vw,28px);color:#f4f4f5;letter-spacing:-.02em}
 .pipe{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);padding:16px 20px;opacity:0;transform:translateY(12px);filter:blur(6px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1),filter .6s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
 .slide.active .pipe{opacity:1;transform:translateY(0);filter:blur(0)}
@@ -83,7 +83,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 .agent-card{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);display:grid;grid-template-columns:140px 1fr 160px;gap:1px;opacity:0;transform:translateY(12px);filter:blur(6px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),filter .5s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
 .slide.active .agent-card{opacity:1;transform:translateY(0);filter:blur(0)}
 .agent-card>div{padding:16px 20px}.agent-card>div:not(:last-child){border-right:1px solid rgba(255,255,255,.05)}
-.agent-hdr{font-family:'JetBrains Mono',monospace;font-size:8px;color:#71717a;margin-bottom:6px}
+.agent-hdr{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a1a1aa;margin-bottom:6px}
 .agent-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;color:#f4f4f5}
 .frame{position:absolute;inset:40px;border:1px solid rgba(255,255,255,.04);pointer-events:none;z-index:1}
 .corners{position:absolute;inset:24px;pointer-events:none;z-index:2}
@@ -195,7 +195,7 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:10px;color:#d4d4d8">PRIVATE EDGE — SHIPPED</span></div>
 </div>
 <div style="border:1px solid rgba(255,255,255,.05);background:rgba(0,0,0,.4);padding:16px;font-family:'JetBrains Mono',monospace">
-<div style="font-size:9px;color:#52525b;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px">LIVE API DEMO — SEARCHHIVE</div>
+<div style="font-size:9px;font-weight:600;color:#a1a1aa;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px">LIVE API DEMO — SEARCHHIVE</div>
 <div style="display:flex;gap:8px">
 <input id="sh-query" type="text" placeholder="Try a search..." style="flex:1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:8px 12px;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;outline:none" onkeydown="if(event.key==='Enter')doSearchHive()">
 <button onclick="doSearchHive()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:8px 16px;color:#d4d4d8;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;cursor:none;text-transform:uppercase">SEARCH</button>
@@ -222,15 +222,15 @@ html,body{height:100%;overflow:hidden;background:#050505;font-family:'Inter',san
 <p class="bd" style="font-size:clamp(14px,1.4vw,17px);margin-bottom:32px;max-width:620px">Multiple revenue streams. No single point of failure. Every product monetizes differently.</p>
 <div style="display:flex;flex-direction:column;gap:12px">
 <div class="compare-col" style="--d:0ms">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#52525b;margin:0">SearchHive — SaaS</h4><span class="tg tg-g">RECURRING</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a1a1aa;margin:0">SearchHive — SaaS</h4><span class="tg tg-g">RECURRING</span></div>
 <p class="bd" style="font-size:13px">Per-query pricing below every major search API competitor. Developer subscriptions. Enterprise contracts. The closest product to earning millions. Predictable, scalable, compounding.</p>
 </div>
 <div class="compare-col" style="--d:100ms">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#52525b;margin:0">Hyperswap + TIDE — DeFi</h4><span class="tg tg-b">VOLUME-SCALED</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a1a1aa;margin:0">Hyperswap + TIDE — DeFi</h4><span class="tg tg-b">VOLUME-SCALED</span></div>
 <p class="bd" style="font-size:13px">Swap fees on $20M+ combined volume across both protocols. ML algorithms optimize routing in real-time. Revenue scales directly with volume and market activity.</p>
 </div>
 <div class="compare-col" style="--d:200ms">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#52525b;margin:0">Custom AI — Services</h4><span class="tg tg-y">HIGH-MARGIN</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><h4 class="mono" style="font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a1a1aa;margin:0">Custom AI — Services</h4><span class="tg tg-y">HIGH-MARGIN</span></div>
 <p class="bd" style="font-size:13px">100+ custom AI solutions delivered to clients. Consulting revenue funds product development. Every custom build feeds back into the platform. Proven demand, proven delivery.</p>
 </div>
 </div>
