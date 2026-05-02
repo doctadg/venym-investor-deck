@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>Venym Labs — Investor Deck 2026 v4 (Mobile)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+body{background:#050505;font-family:'Inter',sans-serif;color:#fff;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+::selection{background:#fff;color:#000}
+::-webkit-scrollbar{width:0;display:none}
+
+/* NOISE */
+.noise{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* SECTION */
+.s{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:48px 20px}
+
+/* DIVIDERS */
+.div{height:1px;background:rgba(255,255,255,.04);margin:0 20px}
+
+/* BLOBS */
+@keyframes blobFloat{0%,100%{transform:scale(1);opacity:.03}50%{transform:scale(1.1);opacity:.06}}
+.bl{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)}
+.b1{top:-20%;left:-15%;width:70%;height:50%;background:rgba(255,255,255,.03);animation:blobFloat 15s ease-in-out infinite}
+.b2{bottom:-25%;right:-15%;width:80%;height:60%;background:rgba(255,255,255,.02);animation:blobFloat 18s ease-in-out infinite 3s}
+
+/* TYPE */
+.mono{font-family:'JetBrains Mono',monospace}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.35em;text-transform:uppercase;color:#27272a}
+.lbl2{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#52525b}
+.hd{font-family:'Inter',sans-serif;font-weight:500;letter-spacing:-.04em;line-height:.9}
+.hd2{font-family:'Inter',sans-serif;font-weight:500;letter-spacing:-.02em;line-height:.92}
+.bd{font-family:'Inter',sans-serif;font-weight:300;color:#a1a1aa;line-height:1.65}
+.mu{color:#52525b}
+.dm{color:#27272a}
+
+/* INNER */
+.w{position:relative;z-index:10;width:100%;max-width:420px;margin:0 auto}
+
+/* BADGES */
+.tg{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.15em;text-transform:uppercase;padding:3px 7px;border:1px solid;display:inline-block}
+.tg-g{border-color:rgba(34,197,94,.2);color:rgba(34,197,94,.6);background:rgba(34,197,94,.05)}
+.tg-y{border-color:rgba(234,179,8,.2);color:rgba(234,179,8,.6);background:rgba(234,179,8,.05)}
+.tg-b{border-color:rgba(59,130,246,.2);color:rgba(59,130,246,.6);background:rgba(59,130,246,.05)}
+.tg-w{border-color:rgba(255,255,255,.08);color:#a1a1aa;background:rgba(255,255,255,.03)}
+.tg-p{border-color:rgba(168,85,247,.2);color:rgba(168,85,247,.6);background:rgba(168,85,247,.05)}
+
+/* CARDS */
+.crd{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03)}
+
+/* METRIC STRIP */
+.metric-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.metric-box{border:1px solid rgba(255,255,255,.05);padding:16px 10px;text-align:center;background:rgba(255,255,255,.03)}
+.metric-label{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.15em;text-transform:uppercase;color:#27272a;margin-bottom:6px}
+.metric-value{font-family:'Inter',sans-serif;font-weight:500;font-size:22px;color:#e4e4e7;letter-spacing:-.02em}
+.metric-sub{font-family:'JetBrains Mono',monospace;font-size:7px;color:#27272a;margin-top:3px}
+
+/* PIPELINE */
+.pipe{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);padding:14px 12px}
+.pipe-track{display:flex;align-items:center;gap:4px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.pipe-n{font-family:'JetBrains Mono',monospace;font-size:8px;white-space:nowrap;padding:4px 8px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:#a1a1aa}
+.pipe-a{font-family:'JetBrains Mono',monospace;font-size:8px;color:#27272a;white-space:nowrap}
+
+/* PILLS */
+.pill{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);padding:5px 10px;display:inline-flex;align-items:center;gap:6px}
+.pill-d{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.08)}
+
+/* BUTTONS */
+.btn-row{display:flex;flex-direction:column;gap:12px}
+.btn-p{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:#fff;color:#000;padding:16px 24px;font-weight:700;text-decoration:none;display:block;border:none;cursor:pointer;text-align:center;transition:opacity .3s;-webkit-tap-highlight-color:transparent}
+.btn-p:hover,.btn-p:active{opacity:.85}
+.btn-s{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(255,255,255,.08);color:#a1a1aa;padding:16px 24px;cursor:pointer;display:block;text-decoration:none;background:transparent;text-align:center;transition:border-color .3s;-webkit-tap-highlight-color:transparent}
+.btn-s:hover,.btn-s:active{border-color:rgba(255,255,255,.2)}
+
+/* COMPARISON */
+.compare-col{border:1px solid rgba(255,255,255,.05);padding:20px 16px;background:rgba(255,255,255,.03);margin-bottom:10px}
+.compare-col.dim{opacity:.45}
+.compare-col h4{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#27272a;margin-bottom:12px}
+.compare-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.compare-col li{font-family:'Inter',sans-serif;font-size:13px;font-weight:300;color:#a1a1aa;line-height:1.45;padding-left:14px;position:relative}
+.compare-col li::before{content:'—';position:absolute;left:0;color:#27272a;font-family:'JetBrains Mono',monospace}
+
+/* AGENT CARDS */
+.agent-card{border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.03);padding:14px 16px;margin-bottom:8px}
+.agent-card .a-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.agent-card .a-hdr{font-family:'JetBrains Mono',monospace;font-size:7px;color:#27272a}
+.agent-card .a-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;color:#e4e4e7}
+.agent-card .a-desc{font-family:'Inter',sans-serif;font-size:12px;font-weight:300;color:#52525b;line-height:1.5}
+
+/* DASH LIST */
+.dash-list{display:flex;flex-direction:column;gap:14px}
+.dash-item{display:flex;gap:14px;align-items:flex-start}
+.dash-item span:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;color:#27272a;line-height:1.6;flex-shrink:0}
+.dash-item span:last-child{font-family:'Inter',sans-serif;font-weight:300;color:#a1a1aa;line-height:1.65;font-size:14px}
+
+/* FRAME LINES */
+.frame{position:absolute;inset:20px;border:1px solid rgba(255,255,255,.03);pointer-events:none;z-index:1}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:rgba(255,255,255,.3);z-index:101;transition:width .1s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms!important;transition-duration:.2s!important}
+  .noise{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══ 01: THE HOOK ═══ -->
+<section class="s" id="s0">
+  <div class="w" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <h1 class="hd" style="font-size:36px;margin-bottom:28px;line-height:.88">
+      The best AI<br>doesn't come from<br><span class="mu">the biggest companies.</span>
+    </h1>
+    <div style="width:36px;height:1px;background:rgba(255,255,255,.08);margin-bottom:20px"></div>
+    <div class="mono" style="font-size:10px;color:#52525b;line-height:1.7">
+      OpenAI builds for everyone.<br>We build for you.
+    </div>
+    <div class="lbl" style="margin-top:auto;padding-top:80px;align-self:flex-start">VENYM LABS</div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 02: THE PROBLEM ═══ -->
+<section class="s" id="s1" style="align-items:flex-start;padding-top:64px;padding-bottom:48px">
+  <div class="bl b1"></div><div class="bl b2"></div>
+  <div class="frame"></div>
+  <div class="w">
+    <div class="lbl" style="margin-bottom:28px">THE PROBLEM</div>
+    <h2 class="hd" style="font-size:26px;color:#e4e4e7;margin-bottom:20px">AI stops at screens.<br><span class="mu">The real world doesn't.</span></h2>
+    <p class="bd" style="font-size:14px;margin-bottom:24px">
+      Every major AI company is building for the digital layer. Chat interfaces, API calls, software tools. Meanwhile the physical world — manufacturing, logistics, drones, robotics — runs on intelligence that hasn't changed in decades.
+    </p>
+    <div class="dash-list">
+      <div class="dash-item"><span>—</span><span>Enterprise AI spending will hit $1.5 trillion in 2025 — Gartner. Almost all of it targets software. The gap between digital AI and physical AI is the largest undisrupted market in technology.</span></div>
+      <div class="dash-item"><span>—</span><span>Companies building physical products — drones, robots, autonomous systems — are forced to bolt on AI as an afterthought. There is no unified intelligence layer for the physical world.</span></div>
+      <div class="dash-item"><span>—</span><span>The companies best positioned to build this layer are the ones who already ship AI products that work. Not research labs. Not chatbot companies. Builders.</span></div>
+      <div class="dash-item"><span>—</span><span>The window to own the physical intelligence layer is open right now. First-mover advantage in autonomous systems compounds fast.</span></div>
+    </div>
+    <div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:24px">"The next $10T market isn't another chatbot. It's intelligence that moves."</div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 03: WHAT WE BUILD ═══ -->
+<section class="s" id="s2" style="align-items:flex-start;padding-top:64px;padding-bottom:48px">
+  <div class="bl b1"></div><div class="bl b2" style="top:30%;right:10%"></div>
+  <div class="frame"></div>
+  <div class="w">
+    <div class="lbl" style="margin-bottom:28px">PRODUCTS</div>
+    <h2 class="hd" style="font-size:26px;color:#e4e4e7;margin-bottom:20px">Five products.<br><span class="mu">All live. All revenue.</span></h2>
+    <p class="bd" style="font-size:14px;margin-bottom:22px">
+      Not a roadmap. A product line. Every vertical ships real revenue.
+    </p>
+
+    <div class="compare-col" style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h4 style="margin-bottom:0">SEARCHHIVE</h4>
+        <span class="tg tg-g">LIVE · REVENUE</span>
+      </div>
+      <ul>
+        <li>Millions of queries processed</li>
+        <li>1,000+ registered developers</li>
+        <li>Undercuts every major search API on price</li>
+      </ul>
+    </div>
+
+    <div class="compare-col" style="border-color:rgba(255,255,255,.08);margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h4 style="margin-bottom:0;color:#a1a1aa">HYPERSWAP</h4>
+        <span class="tg tg-g">LIVE · REVENUE</span>
+      </div>
+      <ul>
+        <li style="color:#e4e4e7">$10M+ trading volume</li>
+        <li style="color:#e4e4e7">ML-powered swap routing</li>
+        <li style="color:#e4e4e7">Real-time market data ingestion</li>
+      </ul>
+    </div>
+
+    <div class="compare-col" style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h4 style="margin-bottom:0">TIDE PROTOCOL</h4>
+        <span class="tg tg-g">LIVE · REVENUE</span>
+      </div>
+      <ul>
+        <li>$10M+ volume processed</li>
+        <li>ML-powered execution layer</li>
+        <li>Intent-based perp routing</li>
+      </ul>
+    </div>
+
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px">
+      <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:7px;color:#52525b;letter-spacing:.1em">CUSTOM AI — 100+</span></div>
+      <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:7px;color:#52525b;letter-spacing:.1em">WORKFLOW AUTO</span></div>
+      <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:7px;color:#52525b;letter-spacing:.1em">PRIVATE EDGE — SHIPPED</span></div>
+    </div>
+    <div class="mono" style="font-size:9px;color:#52525b;font-style:italic">"Every product listed is deployed and generating revenue. Not a prototype. Not a waitlist."</div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 04: BUSINESS MODEL ═══ -->
+<section class="s" id="s3" style="align-items:flex-start;padding-top:64px;padding-bottom:48px">
+  <div class="bl b1"></div><div class="bl b2"></div>
+  <div class="frame"></div>
+  <div class="w">
+    <div class="lbl" style="margin-bottom:28px">BUSINESS MODEL</div>
+    <h2 class="hd" style="font-size:26px;color:#e4e4e7;margin-bottom:20px">Revenue is not theoretical.</h2>
+    <p class="bd" style="font-size:14px;margin-bottom:22px">
+      Multiple revenue streams. No single point of failure.
+    </p>
+
+    <div style="border:1px solid rgba(255,255,255,.05);padding:16px;background:rgba(255,255,255,.03);margin-bottom:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+        <h3 class="hd2" style="font-size:16px;margin-bottom:0;color:#e4e4e7">SearchHive — SaaS</h3>
+        <span class="tg tg-g">RECURRING</span>
+      </div>
+      <p class="bd" style="font-size:12px;color:#52525b">Per-query pricing that is below every major search API competitor. Developer subscriptions. Enterprise contracts. The closest product to earning millions. Predictable, scalable, compounding.</p>
+    </div>
+
+    <div style="border:1px solid rgba(255,255,255,.05);padding:16px;background:rgba(255,255,255,.03);margin-bottom:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+        <h3 class="hd2" style="font-size:16px;margin-bottom:0;color:#e4e4e7">Hyperswap + TIDE — DeFi</h3>
+        <span class="tg tg-b">VOLUME-SCALED</span>
+      </div>
+      <p class="bd" style="font-size:12px;color:#52525b">Swap fees on $20M+ combined volume. ML algorithms optimize routing in real-time. Revenue scales directly with volume and market activity.</p>
+    </div>
+
+    <div style="border:1px solid rgba(255,255,255,.05);padding:16px;background:rgba(255,255,255,.03);margin-bottom:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+        <h3 class="hd2" style="font-size:16px;margin-bottom:0;color:#e4e4e7">Enterprise AI — Retainer</h3>
+        <span class="tg tg-y">HIGH-MARGIN</span>
+      </div>
+      <p class="bd" style="font-size:12px;color:#52525b">Per-implementation and recurring retainer for custom AI systems. 100+ delivered. 90% of total revenue. High-margin, relationship-driven.</p>
+    </div>
+
+    <div class="mono" style="font-size:9px;color:#52525b;margin-top:16px">"Three revenue engines. Zero dependency on any single stream."</div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 05: TRACTION ═══ -->
+<section class="s" id="s4" style="align-items:flex-start;padding-top:64px;padding-bottom:48px">
+  <div class="bl b1" style="top:20%;left:50%"></div>
+  <div class="bl b2"></div>
+  <div class="frame"></div>
+  <div class="w">
+    <div class="lbl" style="margin-bottom:28px">PROOF</div>
+    <h2 class="hd" style="font-size:26px;color:#e4e4e7;margin-bottom:24px">Not a pitch deck.<br><span class="mu">A progress report.</span></h2>
+
+    <div class="metric-grid" style="grid-template-columns:1fr 1fr;margin-bottom:22px">
+      <div class="metric-box">
+        <div class="metric-label">PRODUCTS LIVE</div>
+        <div class="metric-value">5</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">PORTFOLIO COS</div>
+        <div class="metric-value">5</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">FIRST-YEAR RUN RATE</div>
+        <div class="metric-value" style="font-size:16px">~$500K</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">MoM GROWTH</div>
+        <div class="metric-value" style="font-size:16px">15%+</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div class="mono dm" style="font-size:7px;letter-spacing:.2em;margin-bottom:10px">PORTFOLIO</div>
+      <div class="pipe">
+        <div class="pipe-track">
+          <span class="pipe-n">SEARCHHIVE</span>
+          <span class="pipe-n">HYPERSWAP</span>
+          <span class="pipe-n">TIDE</span>
+          <span class="pipe-n">SPIDER LABS</span>
+          <span class="pipe-n">MROR</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="bd" style="font-size:14px">
+      Every company in our portfolio is owned and operated by Venym Labs. Every product is live, deployed, and generating revenue. Built by a solo founder with zero outside funding. 90% of revenue from private enterprise clients.
+    </p>
+    <div class="mono" style="font-size:9px;color:#52525b;margin-top:16px">Deployed. Revenue-generating. Government partnerships in progress.</div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 06: THE STACK ═══ -->
+<section class="s" id="s5" style="align-items:flex-start;padding-top:56px;padding-bottom:44px">
+  <div class="bl b1"></div><div class="bl b2" style="top:-10%;left:60%"></div>
+  <div class="frame"></div>
+  <div class="w">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+      <div style="height:1px;width:36px;background:rgba(255,255,255,.08)"></div>
+      <span class="lbl2">THE ARCHITECTURE</span>
+    </div>
+    <h2 class="hd" style="font-size:24px;margin-bottom:8px">The intelligence layer<br><span class="mu">from digital to physical.</span></h2>
+    <p class="bd" style="font-size:12px;margin-bottom:18px;color:#52525b">
+      This isn't a chatbot with a system prompt. This is infrastructure.
+    </p>
+
+    <div class="agent-card">
+      <div class="a-top">
+        <div><div class="a-hdr">AGENT-01</div><div class="a-name">ANALYST</div></div>
+        <span class="tg tg-g">LIVE</span>
+      </div>
+      <div class="a-desc">Real-time data ingestion, pattern recognition, market intelligence. Powers PerpsTrader AI — autonomous prediction market analysis.</div>
+    </div>
+
+    <div class="agent-card">
+      <div class="a-top">
+        <div><div class="a-hdr">AGENT-02</div><div class="a-name">EXECUTOR</div></div>
+        <span class="tg tg-g">$20M+ VOL</span>
+      </div>
+      <div class="a-desc">Trade execution, task automation, system operations. Routes $20M+ combined volume across our own TIDE Protocol and Hyperswap via ML algorithms.</div>
+    </div>
+
+    <div class="agent-card">
+      <div class="a-top">
+        <div><div class="a-hdr">AGENT-03</div><div class="a-name">COMMUNICATOR</div></div>
+        <span class="tg tg-b">MULTI-PRODUCT</span>
+      </div>
+      <div class="a-desc">Client-facing AI, report generation, brand communication. Powers Spider 2, VenymCMO, and portfolio communications.</div>
+    </div>
+
+    <div class="agent-card">
+      <div class="a-top">
+        <div><div class="a-hdr">AGENT-04</div><div class="a-name">COORDINATOR</div></div>
+        <span class="tg tg-y">100+ SYSTEMS</span>
+      </div>
+      <div class="a-desc">Multi-agent orchestration, workflow management. Manages 100+ deployed AI systems simultaneously.</div>
+    </div>
+
+    <div class="pipe" style="margin-top:14px">
+      <div style="margin-bottom:6px"><span class="pipe-a">DEPLOYMENT →</span></div>
+      <div class="pipe-track">
+        <span class="pipe-n">EDGE INFERENCE</span>
+        <span class="pipe-n">PRIVATE CLOUD</span>
+        <span class="pipe-n">ON-PREMISE</span>
+        <span class="pipe-n">HYBRID</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;border-top:1px solid rgba(255,255,255,.05);padding-top:16px">
+      <div class="mono dm" style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px">INTELLECTUAL PROPERTY</div>
+      <p class="bd" style="font-size:12px;color:#52525b;line-height:1.65">We own all IP, data, branding rights, and proprietary technology across every portfolio company. No licensing. No dependencies. The IP portfolio expands every month.</p>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 07: MARKET OPPORTUNITY ═══ -->
+<section class="s" id="s6" style="align-items:flex-start;padding-top:64px;padding-bottom:48px">
+  <div class="bl b1"></div><div class="bl b2"></div>
+  <div class="frame"></div>
+  <div class="w">
+    <div class="lbl" style="margin-bottom:28px">MARKET</div>
+    <h2 class="hd" style="font-size:26px;color:#e4e4e7;margin-bottom:20px">The market hasn't<br><span class="mu">been built yet.</span></h2>
+    <p class="bd" style="font-size:14px;margin-bottom:22px">
+      We're not competing in a crowded space. We're building a new one. The intersection of specialized AI and autonomous physical systems is the largest greenfield opportunity in technology.
+    </p>
+
+    <div style="border:1px solid rgba(255,255,255,.05);padding:16px;background:rgba(255,255,255,.03);margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span class="mono dm" style="font-size:7px;letter-spacing:.15em">FORCE 01</span><span class="tg tg-b">DIGITAL AI ($1.5T by 2025)</span>
+      </div>
+      <div class="mono dm" style="font-size:8px;letter-spacing:.1em;margin-bottom:4px">ENTERPRISE</div>
+      <p class="bd" style="font-size:12px;color:#52525b">Worldwide AI spending forecast at $1.5 trillion in 2025, up from $987.9B in 2024 — Gartner. Enterprise demand for specialized, private AI is exploding. 30% of GenAI projects abandoned after proof-of-concept. Companies need builders, not researchers.</p>
+    </div>
+
+    <div style="border:1px solid rgba(255,255,255,.05);padding:16px;background:rgba(255,255,255,.03);margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span class="mono dm" style="font-size:7px;letter-spacing:.15em">FORCE 02</span><span class="tg tg-y">AUTONOMOUS SYSTEMS ($100B+)</span>
+      </div>
+      <div class="mono dm" style="font-size:8px;letter-spacing:.1em;margin-bottom:4px">PHYSICAL</div>
+      <p class="bd" style="font-size:12px;color:#52525b">Drone market: $163B+ by 2030. Robotics: $140B+. Autonomous systems across logistics, agriculture, defense still running on pre-AI intelligence. The upgrade cycle hasn't started.</p>
+    </div>
+
+    <div style="border:1px solid rgba(255,255,255,.05);padding:16px;background:rgba(255,255,255,.03);margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span class="mono dm" style="font-size:7px;letter-spacing:.15em">FORCE 03</span><span class="tg tg-w">THE INTERSECTION</span>
+      </div>
+      <div class="mono dm" style="font-size:8px;letter-spacing:.1em;margin-bottom:4px">GREENFIELD</div>
+      <p class="bd" style="font-size:12px;color:#52525b">By 2027, 50%+ of GenAI models will be industry-specific — up from 1% in 2023. The company that owns the intelligence layer for autonomous physical systems owns the most valuable infrastructure play of the decade.</p>
+    </div>
+
+    <div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:16px">"Positioned at the intersection of a $1.5T digital AI market and a $300B+ autonomous systems market."</div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 08: THE VISION ═══ -->
+<section class="s" id="s7" style="align-items:flex-start;padding-top:56px;padding-bottom:44px">
+  <div class="bl b1"></div><div class="bl b2" style="top:30%;right:10%"></div>
+  <div class="frame"></div>
+  <div class="w">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+      <div style="height:1px;width:36px;background:rgba(255,255,255,.08)"></div>
+      <span class="lbl2">THE VISION</span>
+    </div>
+    <h2 class="hd" style="font-size:24px;margin-bottom:8px">Intelligence that moves.</h2>
+    <p class="bd" style="font-size:12px;margin-bottom:22px;color:#52525b">Same architecture. New execution surface. Digital to physical.</p>
+
+    <div style="border:1px solid rgba(255,255,255,.05);padding:16px;background:rgba(255,255,255,.03);margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span class="mono dm" style="font-size:7px;letter-spacing:.15em">PHASE 01</span><span class="tg tg-g">COMPLETE</span>
+      </div>
+      <h3 class="hd2" style="font-size:16px;margin-bottom:4px;color:#e4e4e7">2025: Foundation</h3>
+      <p class="bd" style="font-size:12px;color:#52525b">Built core AI agent architecture. Deployed autonomous systems. Launched 5 revenue-generating products. Proved the model.</p>
+    </div>
+
+    <div style="border:1px solid rgba(255,255,255,.1);padding:16px;background:rgba(255,255,255,.04);margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span class="mono dm" style="font-size:7px;letter-spacing:.15em">PHASE 02</span><span class="tg tg-b">IN PROGRESS</span>
+      </div>
+      <h3 class="hd2" style="font-size:16px;margin-bottom:4px;color:#e4e4e7">2026: Scale</h3>
+      <p class="bd" style="font-size:12px;color:#52525b">Scaling enterprise AI. 15%+ MoM growth in implementations. Private edge shipping. SearchHive approaching millions. Building revenue foundation.</p>
+    </div>
+
+    <div style="border:1px solid rgba(255,255,255,.05);padding:16px;background:rgba(255,255,255,.02);margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span class="mono dm" style="font-size:7px;letter-spacing:.15em">PHASE 03</span><span class="tg tg-y">NEXT</span>
+      </div>
+      <h3 class="hd2" style="font-size:16px;margin-bottom:4px;color:#e4e4e7">2027+: Physical Intelligence</h3>
+      <p class="bd" style="font-size:12px;color:#52525b">Same intelligence layer for autonomous physical systems. Embedded firmware built for ESP and microcontrollers. Drone air traffic control in government presentations. In-house manufacturing ready post-raise: drones, robots, electronics, composites, metal. Hardware partnerships in discussion.</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+        <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:7px;color:#52525b;letter-spacing:.1em">DRONES</span></div>
+        <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:7px;color:#52525b;letter-spacing:.1em">ROBOTS</span></div>
+        <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:7px;color:#52525b;letter-spacing:.1em">EMBEDDED</span></div>
+        <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:7px;color:#52525b;letter-spacing:.1em">HW MFG</span></div>
+        <div class="pill"><span class="pill-d"></span><span class="mono" style="font-size:7px;color:#52525b;letter-spacing:.1em">PHYSICAL AI</span></div>
+      </div>
+    </div>
+
+    <p class="mono" style="font-size:9px;color:#a1a1aa;font-style:italic;line-height:1.6;margin-top:16px">"The first company to deliver a unified AI layer from digital to physical wins the most valuable infrastructure position in technology."</p>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 09: TEAM & IP ═══ -->
+<section class="s" id="s8" style="align-items:flex-start;padding-top:64px;padding-bottom:48px">
+  <div class="bl b1"></div><div class="bl b2"></div>
+  <div class="frame"></div>
+  <div class="w">
+    <div class="lbl" style="margin-bottom:28px">TEAM</div>
+    <h2 class="hd" style="font-size:26px;color:#e4e4e7;margin-bottom:20px">Solo founder.<br><span class="mu">Complete ownership.</span></h2>
+
+    <p class="bd" style="font-size:14px;margin-bottom:24px">
+      Built 5 profitable AI products from zero to ~$500K ARR with no outside funding. Infrastructure trusted by major DeFi protocols including our own TIDE and Hyperswap for critical systems. Touches every layer — firmware, backend, AI agents, production infrastructure.
+    </p>
+
+    <div class="dash-list" style="margin-bottom:28px">
+      <div class="dash-item"><span>—</span><span>Full-stack builder — firmware, backend, frontend, AI agents, protocol design, DevOps</span></div>
+      <div class="dash-item"><span>—</span><span>DeFi infrastructure trusted for critical systems — TIDE and Hyperswap power $20M+ in combined volume</span></div>
+      <div class="dash-item"><span>—</span><span>100+ custom AI implementations delivered to private enterprise clients</span></div>
+      <div class="dash-item"><span>—</span><span>Scaling from solo founder — actively seeking creative and engineering talent</span></div>
+    </div>
+
+    <div class="crd" style="padding:16px">
+      <div class="mono dm" style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px">PROPRIETARY TECHNOLOGY</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+        <li style="font-family:'Inter',sans-serif;font-size:12px;font-weight:300;color:#52525b;line-height:1.5;padding-left:14px;position:relative">100% IP ownership across all 5 portfolio companies<span style="position:absolute;left:0;color:#27272a">—</span></li>
+        <li style="font-family:'Inter',sans-serif;font-size:12px;font-weight:300;color:#52525b;line-height:1.5;padding-left:14px;position:relative">No licensing dependencies. No cap table complexity.<span style="position:absolute;left:0;color:#27272a">—</span></li>
+        <li style="font-family:'Inter',sans-serif;font-size:12px;font-weight:300;color:#52525b;line-height:1.5;padding-left:14px;position:relative">IP expanding monthly — new proprietary systems shipped regularly<span style="position:absolute;left:0;color:#27272a">—</span></li>
+        <li style="font-family:'Inter',sans-serif;font-size:12px;font-weight:300;color:#52525b;line-height:1.5;padding-left:14px;position:relative">Spider 2: Proprietary LLM trained for high-frequency trading<span style="position:absolute;left:0;color:#27272a">—</span></li>
+      </ul>
+    </div>
+
+    <div class="mono" style="font-size:10px;color:#a1a1aa;font-style:italic;margin-top:24px">"Complete ownership means complete control. No dilution. No dependencies. No ceiling."</div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ═══ 10: THE ASK ═══ -->
+<section class="s" id="s9">
+  <div class="bl b1" style="top:20%;left:20%"></div><div class="bl b2" style="bottom:10%;right:20%"></div>
+  <div class="frame"></div>
+  <div class="w" style="text-align:center;display:flex;flex-direction:column;align-items:center">
+    <div class="lbl" style="margin-bottom:32px">THE OPPORTUNITY</div>
+    <h2 class="hd" style="font-size:28px;color:#e4e4e7;margin-bottom:20px">
+      The price of entry<br><span class="mu">increases every quarter.</span>
+    </h2>
+    <p class="bd" style="font-size:14px;max-width:360px;margin-bottom:24px;text-align:left">
+      We're looking for strategic partners who understand that the intersection of AI and autonomous physical systems is the defining infrastructure play of this decade.
+    </p>
+    <div class="dash-list" style="text-align:left;margin-bottom:32px;width:100%">
+      <div class="dash-item"><span>—</span><span>~$500K first-year run rate. Zero sales effort. Zero outside funding. Revenue from day one.</span></div>
+      <div class="dash-item"><span>—</span><span>5 owned products. 5 portfolio companies. All IP retained. Clean cap table. 15%+ MoM growth.</span></div>
+      <div class="dash-item"><span>—</span><span>The real value: the physical intelligence layer. Drones, robots, autonomous systems. Government interest validated.</span></div>
+      <div class="dash-item"><span>—</span><span>Post-raise: in-house physical production — drones, robots, electronics, composites, metal manufacturing.</span></div>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,.08);padding:24px;text-align:center;margin-bottom:32px;width:100%">
+      <div class="lbl" style="margin-bottom:12px">PRE-MONEY VALUATION</div>
+      <div class="hd" style="font-size:40px;color:#fff;margin-bottom:12px">$3M</div>
+      <div class="mono dm" style="font-size:8px;letter-spacing:.1em">SAFE · PHYSICAL PRODUCTION · ENGINEERING HIRES · OPERATIONS</div>
+    </div>
+    <div class="btn-row">
+      <a class="btn-p" href="https://t.me/RealDoctaDG">LET'S TALK</a>
+      <a class="btn-s" href="#">REQUEST FULL DECK</a>
+    </div>
+    <div class="mono" style="font-size:8px;color:#27272a;letter-spacing:.15em;margin-top:40px">VENYM LABS © 2026</div>
+  </div>
+</section>
+
+<script>
+// Scroll progress bar
+const bar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = h > 0 ? ((window.scrollY / h) * 100) + '%' : '0%';
+}, {passive: true});
+</script>
+
+</body>
+</html>
